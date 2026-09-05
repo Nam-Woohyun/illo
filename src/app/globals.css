@@ -1,10 +1,240 @@
 @import "tailwindcss";
 
-html {
-  background: #ffffff;
+@theme {
+  /* ----------------------------------
+   * ILLO Colors
+   * ---------------------------------- */
+
+  --color-primary: #147d72;
+  --color-primary-hover: #0f685f;
+  --color-secondary: #ddedea;
+
+  --color-bg: #f7f8f7;
+  --color-surface: #ffffff;
+  --color-border: #e1e5e3;
+
+  --color-text: #18201e;
+  --color-text-secondary: #4b5955;
+  --color-muted: #76817e;
+
+  --color-success: #2e7d4f;
+  --color-warning: #a16207;
+  --color-error: #b42318;
+  --color-info: #326a8c;
+
+  /* ----------------------------------
+   * Font
+   * ---------------------------------- */
+
+  --font-sans:
+    "Pretendard Variable",
+    Pretendard,
+    "Noto Sans KR",
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  /* ----------------------------------
+   * Radius
+   * ---------------------------------- */
+
+  --radius-sm: 0.375rem;
+  --radius-control: 0.625rem;
+  --radius-card: 0.75rem;
+  --radius-callout: 0.75rem;
+
+  /* ----------------------------------
+   * Shadow
+   * ---------------------------------- */
+
+  --shadow-hover: 0 4px 14px rgba(24, 32, 30, 0.06);
+  --shadow-overlay: 0 8px 24px rgba(24, 32, 30, 0.1);
+
+  /* ----------------------------------
+   * Layout
+   * ---------------------------------- */
+
+  --container-page: 75rem;
+  --container-article: 47.5rem;
+
+  /* ----------------------------------
+   * ILLO Breakpoints
+   * Mobile = default
+   * ---------------------------------- */
+
+  --breakpoint-tablet: 40rem;
+  --breakpoint-desktop: 64rem;
+  --breakpoint-wide: 90rem;
 }
 
-body {
-  min-height: 100vh;
-  margin: 0;
+/*
+ * Component-specific visual tokens.
+ *
+ * Tailwind utility로 전부 노출할 필요는 없지만
+ * 여러 Callout에서 동일한 색을 재사용하기 위해
+ * CSS variable로 관리한다.
+ */
+:root {
+  --focus-ring: #cde9e4;
+
+  --callout-summary-bg: #f0f7f5;
+  --callout-summary-border: #ddedea;
+
+  --callout-info-bg: #f3f7f8;
+  --callout-info-border: #dce6ea;
+
+  --callout-example-bg: #ffffff;
+  --callout-example-border: #e1e5e3;
+
+  --callout-caution-bg: #fff8e8;
+  --callout-caution-border: #ebd8a8;
+
+  --ai-surface: #f0f7f5;
+  --ai-border: #cfe3de;
+}
+
+/* ----------------------------------
+ * Global Base Styles
+ * ---------------------------------- */
+
+@layer base {
+  html {
+    min-height: 100%;
+    background: var(--color-bg);
+  }
+
+  body {
+    min-height: 100vh;
+    margin: 0;
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  button,
+  input,
+  textarea,
+  select {
+    font: inherit;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    background: var(--color-secondary);
+    color: var(--color-text);
+  }
+}
+
+/* ----------------------------------
+ * ILLO Typography
+ *
+ * Mobile first
+ * Desktop: >= 1024px
+ * ---------------------------------- */
+
+@layer utilities {
+  .type-display {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 44px;
+  }
+
+  .type-h1 {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 40px;
+  }
+
+  .type-h2 {
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 35px;
+  }
+
+  .type-h3 {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 29px;
+  }
+
+  .type-body-lg {
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 28px;
+  }
+
+  .type-body {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 27px;
+  }
+
+  .type-body-sm {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+  }
+
+  .type-caption {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+  }
+
+  .type-label {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+  }
+
+  @media (width >= 64rem) {
+    .type-display {
+      font-size: 48px;
+      line-height: 56px;
+    }
+
+    .type-h1 {
+      font-size: 40px;
+      line-height: 50px;
+    }
+
+    .type-h2 {
+      font-size: 30px;
+      line-height: 40px;
+    }
+
+    .type-h3 {
+      font-size: 22px;
+      line-height: 32px;
+    }
+
+    .type-body-lg {
+      font-size: 18px;
+      line-height: 30px;
+    }
+
+    .type-body {
+      font-size: 16px;
+      line-height: 28px;
+    }
+
+    .type-body-sm {
+      font-size: 14px;
+      line-height: 22px;
+    }
+  }
 }
