@@ -1,17 +1,24 @@
-export default function Home() {
+import { PageContainer } from "@/components/layout/PageContainer";
+
+export default function HomePage() {
   return (
-    <main className="flex min-h-screen items-center justify-center bg-white px-6 font-sans text-gray-900">
-      <div className="text-center">
-        <p className="text-sm font-medium text-gray-500">ILLO</p>
+    <main className="py-16 desktop:py-20">
+      <PageContainer>
+        <div className="max-w-article">
+          <p className="type-label text-primary">
+            ILLO
+          </p>
 
-        <h1 className="mt-2 text-3xl font-bold">
-          일로
-        </h1>
+          <h1 className="type-h1 mt-3 text-text">
+            Phase 3 Layout Preview
+          </h1>
 
-        <p className="mt-3 text-base text-gray-600">
-          개발 환경 설정 완료
-        </p>
-      </div>
+          <p className="type-body-lg mt-4 text-text-secondary">
+            Header와 Footer가 정상적으로
+            적용되었습니다.
+          </p>
+        </div>
+      </PageContainer>
     </main>
   );
 }
