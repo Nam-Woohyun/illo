@@ -15,7 +15,7 @@ export const navigationItems = [
     showInFooter: true,
   },
   {
-    label: "인사노무 정보",
+    label: "일할 때 필요한 정보",
     href: "/knowledge",
     area: "primary",
     showInMobileMenu: true,

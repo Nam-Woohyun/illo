@@ -21,10 +21,12 @@ import type {
 } from "@/types/content";
 
 export const metadata: Metadata = {
-  title:
-    "일로 ILLO | 일하는 사람을 위한 인사노무 정보 가이드",
+  title: {
+    absolute:
+      "일로 | 일하다 궁금한 순간, 필요한 정보로",
+  },
   description:
-    "법률 용어를 몰라도 자신의 상황에서 출발해 필요한 인사노무 정보와 공식 근거를 찾을 수 있습니다.",
+    "법률 용어를 몰라도 자신의 상황에서 출발해 필요한 인사노무 정보와 공식 근거를 찾아볼 수 있습니다.",
 };
 
 /*
@@ -150,15 +152,15 @@ export default async function HomePage() {
             <p className="type-body-lg mt-5 text-text-secondary">
               사회초년생과 근로자가
               자신의 상황에서 출발해
-              신뢰할 수 있는 인사노무
-              정보를 쉽게 찾을 수 있도록
+              필요한 정보를 쉽게 찾고
+              확인할 수 있도록
               돕는 서비스입니다.
             </p>
 
             <div className="mt-8">
               <SearchInput
                 id="home-search"
-                label="인사노무 정보 검색"
+                label="궁금한 정보 검색"
                 placeholder="근로계약서, 연차, 퇴직금 등을 검색해보세요"
                 buttonLabel="검색"
                 required
@@ -244,7 +246,7 @@ export default async function HomePage() {
                     description={
                       presentation
                         ?.description ??
-                      "현재 상황과 관련된 인사노무 정보를 확인해보세요."
+                      "현재 상황과 관련된 정보를 확인해보세요."
                     }
                     className={
                       gridClassName
@@ -268,7 +270,7 @@ export default async function HomePage() {
             title="많이 찾는 정보"
             description="현재 제공 중인 핵심 정보 가운데 먼저 살펴보기 좋은 주제를 모았습니다."
             href="/knowledge"
-            linkLabel="전체 인사노무 정보 보기"
+            linkLabel="전체 정보 보기"
           />
 
           <div className="mt-8 grid gap-5 tablet:auto-rows-fr tablet:grid-cols-2 desktop:grid-cols-3">
@@ -317,7 +319,7 @@ export default async function HomePage() {
                 모르더라도 지금 겪고 있는
                 상황을 자연어로 입력하면,
                 질문의 핵심을 분석해 관련
-                Knowledge를 찾을 수 있도록
+                정보를 찾을 수 있도록
                 돕습니다.
               </p>
 

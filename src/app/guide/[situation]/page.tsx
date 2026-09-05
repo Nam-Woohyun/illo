@@ -49,15 +49,15 @@ export async function generateMetadata({
   if (!guide) {
     return {
       title:
-        "상황을 찾을 수 없습니다 | 일로",
+        "상황을 찾을 수 없습니다",
     };
   }
 
   return {
-    title: `${guide.name} | 일로`,
+    title: guide.name,
     description:
       presentation?.description ??
-      "현재 상황과 관련된 인사노무 정보를 확인해보세요.",
+      "현재 상황과 관련된 정보를 확인해보세요.",
   };
 }
 
@@ -164,7 +164,7 @@ export default async function GuideDetailPage({
               description={
                 presentation
                   ?.description ??
-                "현재 상황과 관련된 인사노무 정보를 확인해보세요."
+                "현재 상황과 관련된 정보를 확인해보세요."
               }
             />
           </div>

@@ -5,10 +5,6 @@ import { Breadcrumb } from "@/components/content/Breadcrumb";
 import { LegalBasisList } from "@/components/content/LegalBasisList";
 import { RelatedKnowledgeCard } from "@/components/content/RelatedKnowledgeCard";
 import { SourceList } from "@/components/content/SourceList";
-import {
-  TableOfContents,
-  type TableOfContentsItem,
-} from "@/components/content/TableOfContents";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { Badge } from "@/components/ui/Badge";
 import { Callout } from "@/components/ui/Callout";
@@ -30,37 +26,6 @@ interface KnowledgeDetailPageProps {
   }>;
 }
 
-const tableOfContents: TableOfContentsItem[] = [
-  {
-    id: "easy-explanation",
-    label: "쉽게 설명하면",
-  },
-  {
-    id: "applies-to",
-    label: "이런 경우에 확인하세요",
-  },
-  {
-    id: "key-points",
-    label: "핵심 내용",
-  },
-  {
-    id: "examples",
-    label: "상황 예시",
-  },
-  {
-    id: "check-points",
-    label: "꼭 확인할 점",
-  },
-  {
-    id: "legal-basis",
-    label: "법적 근거",
-  },
-  {
-    id: "official-sources",
-    label: "공식 출처",
-  },
-];
-
 export async function generateStaticParams() {
   const items =
     await getPublishedKnowledge();
@@ -81,12 +46,12 @@ export async function generateMetadata({
   if (!item) {
     return {
       title:
-        "정보를 찾을 수 없습니다 | 일로",
+        "정보를 찾을 수 없습니다",
     };
   }
 
   return {
-    title: `${item.title} | 일로`,
+    title: item.title,
     description: item.summary,
   };
 }
@@ -168,7 +133,7 @@ export default async function KnowledgeDetailPage({
               },
               {
                 label:
-                  "인사노무 정보",
+                  "일할 때 필요한 정보",
                 href: "/knowledge",
               },
               {
@@ -202,12 +167,6 @@ export default async function KnowledgeDetailPage({
               </Callout>
             </div>
           </header>
-
-          <div className="mt-8">
-            <TableOfContents
-              items={tableOfContents}
-            />
-          </div>
 
           <section
             id="easy-explanation"

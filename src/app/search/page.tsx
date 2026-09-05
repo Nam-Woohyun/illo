@@ -18,7 +18,7 @@ import {
 } from "@/lib/search";
 
 export const metadata: Metadata = {
-  title: "인사노무 정보 검색 | 일로",
+  title: "궁금한 정보 검색",
   description:
     "궁금한 주제나 키워드를 입력해 필요한 인사노무 정보를 찾아보세요.",
   robots: {
@@ -86,7 +86,7 @@ export default async function SearchPage({
         <div className="max-w-article">
           <PageHeader
             eyebrow="Search"
-            title="인사노무 정보 검색"
+            title="궁금한 정보 검색"
             description="궁금한 주제나 키워드를 입력해 필요한 정보를 찾아보세요."
           />
 

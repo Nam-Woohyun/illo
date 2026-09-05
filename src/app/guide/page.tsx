@@ -15,9 +15,9 @@ import {
 } from "@/lib/knowledge";
 
 export const metadata: Metadata = {
-  title: "상황별 찾기 | 일로",
+  title: "상황별 찾기",
   description:
-    "지금 처한 상황과 가장 가까운 항목에서 필요한 인사노무 정보를 찾아보세요.",
+    "일을 시작할 때부터 근무 조건, 급여·수당, 문제 상황과 퇴사까지 현재 상황에 맞는 인사노무 정보를 찾아보세요.",
 };
 
 export default async function GuidePage() {
@@ -78,7 +78,7 @@ export default async function GuidePage() {
         guide,
         description:
           presentation?.description ??
-          "현재 상황과 관련된 인사노무 정보를 확인해보세요.",
+          "현재 상황과 관련된 정보를 확인해보세요.",
         questions,
         knowledgeCount:
           relations.length,

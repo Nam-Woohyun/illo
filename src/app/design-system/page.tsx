@@ -1,7 +1,17 @@
+import type { Metadata } from "next";
+
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { Callout } from "@/components/ui/Callout";
 import { Chip } from "@/components/ui/Chip";
+
+export const metadata: Metadata = {
+  title: "디자인 시스템",
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
 
 const colors = [
   {

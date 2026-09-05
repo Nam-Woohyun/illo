@@ -8,7 +8,7 @@ import { PageHeader } from "@/components/layout/PageHeader";
 import { Callout } from "@/components/ui/Callout";
 
 export const metadata: Metadata = {
-  title: "AI로 찾기 | 일로",
+  title: "AI로 찾기",
   description:
     "법률 용어를 몰라도 현재 상황을 문장으로 설명해 관련 인사노무 정보를 찾아보세요.",
 };

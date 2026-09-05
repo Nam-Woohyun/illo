@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 
 import { KnowledgeCard } from "@/components/content/KnowledgeCard";
@@ -17,6 +18,30 @@ interface KnowledgePageProps {
   searchParams: Promise<{
     category?: string | string[];
   }>;
+}
+
+const knowledgeDescription =
+  "근로계약, 임금, 근로시간, 휴가, 퇴직·해고 등 일하면서 필요한 인사노무 정보를 쉬운 설명과 공식 근거로 확인해보세요.";
+
+export async function generateMetadata({
+  searchParams,
+}: KnowledgePageProps): Promise<Metadata> {
+  const params = await searchParams;
+
+  const hasCategoryFilter =
+    typeof params.category === "string" &&
+    params.category.length > 0;
+
+  return {
+    title: "일할 때 필요한 정보",
+    description: knowledgeDescription,
+    robots: hasCategoryFilter
+      ? {
+          index: false,
+          follow: true,
+        }
+      : undefined,
+  };
 }
 
 export default async function KnowledgePage({
@@ -57,8 +82,8 @@ export default async function KnowledgePage({
       <PageContainer>
         <PageHeader
           eyebrow="Knowledge"
-          title="인사노무 정보"
-          description="일하면서 알아두면 좋은 인사노무 정보를 주제별로 살펴보세요."
+          title="일할 때 필요한 정보"
+          description="근로계약, 급여, 근로시간, 휴가, 퇴사처럼 일하면서 궁금할 수 있는 내용을 주제별로 살펴보세요."
         />
 
         <div className="mt-10">
@@ -127,7 +152,7 @@ function CategoryFilter({
 }: CategoryFilterProps) {
   return (
     <nav
-      aria-label="인사노무 정보 카테고리"
+      aria-label="정보 주제 선택"
       className="flex flex-wrap gap-2"
     >
       <CategoryFilterLink

@@ -32,7 +32,7 @@ export default function NotFound() {
               href="/knowledge"
               className="inline-flex min-h-11 items-center rounded-control border border-border bg-surface px-5 type-label text-text transition-colors hover:bg-bg"
             >
-              인사노무 정보
+              일할 때 필요한 정보
             </Link>
 
             <Link

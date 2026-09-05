@@ -14,7 +14,7 @@ interface SearchInputProps {
 export function SearchInput({
   id = "search-query",
   name = "q",
-  label = "인사노무 정보 검색",
+  label = "궁금한 정보 검색",
   placeholder = "근로계약서, 연차, 퇴직금 등을 검색해보세요",
   defaultValue = "",
   buttonLabel = "검색",
