@@ -6,14 +6,47 @@ import "./globals.css";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 
+import {
+  getSiteUrl,
+  SITE_DESCRIPTION,
+  SITE_NAME,
+  SITE_TITLE,
+} from "@/lib/site";
+
 export const metadata: Metadata = {
+  metadataBase:
+    getSiteUrl(),
+
   title: {
     default:
-      "일로 | 일하다 궁금한 순간, 필요한 정보로",
-    template: "%s | 일로",
+      SITE_TITLE,
+    template:
+      `%s | ${SITE_NAME}`,
   },
+
   description:
-    "사회초년생과 근로자가 자신의 상황에서 출발해 필요한 인사노무 정보와 공식 근거를 확인할 수 있도록 돕는 정보 서비스입니다.",
+    SITE_DESCRIPTION,
+
+  openGraph: {
+    type: "website",
+    locale: "ko_KR",
+    siteName:
+      SITE_NAME,
+    title:
+      SITE_TITLE,
+    description:
+      SITE_DESCRIPTION,
+    url: "/",
+  },
+
+  twitter: {
+    card:
+      "summary_large_image",
+    title:
+      SITE_TITLE,
+    description:
+      SITE_DESCRIPTION,
+  },
 };
 
 export default function RootLayout({

@@ -1,5 +1,3 @@
-import type { Metadata } from "next";
-
 import {
   getGuidePresentation,
   getGuideRepresentativeQuestion,
@@ -13,12 +11,21 @@ import {
   getAllGuideSituations,
   getKnowledgeByGuide,
 } from "@/lib/knowledge";
+import {
+  createPageMetadata,
+} from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "상황별 찾기",
-  description:
-    "일을 시작할 때부터 근무 조건, 급여·수당, 문제 상황과 퇴사까지 현재 상황에 맞는 인사노무 정보를 찾아보세요.",
-};
+export const metadata =
+  createPageMetadata({
+    title:
+      "상황별 찾기",
+
+    description:
+      "일을 시작할 때부터 근무 조건, 급여·수당, 문제 상황과 퇴사까지 현재 상황에 맞는 인사노무 정보를 찾아보세요.",
+
+    path:
+      "/guide",
+  });
 
 export default async function GuidePage() {
   const guides =

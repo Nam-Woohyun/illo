@@ -1,6 +1,3 @@
-import type {
-  Metadata,
-} from "next";
 import Link from "next/link";
 
 import { KnowledgeCard } from "@/components/content/KnowledgeCard";
@@ -12,20 +9,33 @@ import {
   getAllCategories,
 } from "@/lib/knowledge";
 import {
+  createPageMetadata,
+} from "@/lib/metadata";
+import {
   normalizeQuery,
   searchKnowledge,
   SEARCH_QUERY_MAX_LENGTH,
 } from "@/lib/search";
 
-export const metadata: Metadata = {
-  title: "궁금한 정보 검색",
-  description:
-    "궁금한 주제나 키워드를 입력해 필요한 인사노무 정보를 찾아보세요.",
-  robots: {
-    index: false,
-    follow: true,
-  },
-};
+export const metadata =
+  createPageMetadata({
+    title:
+      "궁금한 정보 검색",
+
+    description:
+      "궁금한 주제나 키워드를 입력해 필요한 인사노무 정보를 찾아보세요.",
+
+    path:
+      "/search",
+
+    canonical:
+      false,
+
+    robots: {
+      index: false,
+      follow: true,
+    },
+  });
 
 const recommendedQueries = [
   "근로계약서",

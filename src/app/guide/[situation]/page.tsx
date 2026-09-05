@@ -17,6 +17,9 @@ import {
   getGuideSituationBySlug,
   getKnowledgeByGuide,
 } from "@/lib/knowledge";
+import {
+  createPageMetadata,
+} from "@/lib/metadata";
 
 interface GuideDetailPageProps {
   params: Promise<{
@@ -50,15 +53,26 @@ export async function generateMetadata({
     return {
       title:
         "상황을 찾을 수 없습니다",
+      robots: {
+        index: false,
+        follow: false,
+      },
     };
   }
 
-  return {
-    title: guide.name,
-    description:
-      presentation?.description ??
-      "현재 상황과 관련된 정보를 확인해보세요.",
-  };
+  const description =
+    presentation?.description ??
+    "현재 상황과 관련된 정보를 확인해보세요.";
+
+  return createPageMetadata({
+    title:
+      guide.name,
+
+    description,
+
+    path:
+      `/guide/${guide.slug}`,
+  });
 }
 
 export default async function GuideDetailPage({

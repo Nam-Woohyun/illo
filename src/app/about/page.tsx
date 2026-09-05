@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { Fragment } from "react";
 
@@ -6,11 +5,21 @@ import { PageContainer } from "@/components/layout/PageContainer";
 import { PageHeader } from "@/components/layout/PageHeader";
 import { Callout } from "@/components/ui/Callout";
 
-export const metadata: Metadata = {
-  title: "프로젝트 소개",
-  description:
-    "사용자 상황 중심의 인사노무 정보 탐색 서비스 일로의 기획, UX, 데이터 구조와 AI 검색 설계를 소개합니다.",
-};
+import {
+  createPageMetadata,
+} from "@/lib/metadata";
+
+export const metadata =
+  createPageMetadata({
+    title:
+      "프로젝트 소개",
+
+    description:
+      "사용자 상황 중심의 인사노무 정보 탐색 서비스 일로의 기획, UX, 데이터 구조와 AI 검색 설계를 소개합니다.",
+
+    path:
+      "/about",
+  });
 
 const projectFacts = [
   {

@@ -11,6 +11,9 @@ import {
   getKnowledgeByCategory,
   getPublishedKnowledge,
 } from "@/lib/knowledge";
+import {
+  createPageMetadata,
+} from "@/lib/metadata";
 
 import type { Category } from "@/types/content";
 
@@ -26,22 +29,36 @@ const knowledgeDescription =
 export async function generateMetadata({
   searchParams,
 }: KnowledgePageProps): Promise<Metadata> {
-  const params = await searchParams;
+  const params =
+    await searchParams;
 
   const hasCategoryFilter =
-    typeof params.category === "string" &&
-    params.category.length > 0;
+    typeof params.category ===
+      "string" &&
+    params.category.length >
+      0;
 
-  return {
-    title: "일할 때 필요한 정보",
-    description: knowledgeDescription,
-    robots: hasCategoryFilter
-      ? {
-          index: false,
-          follow: true,
-        }
-      : undefined,
-  };
+  return createPageMetadata({
+    title:
+      "일할 때 필요한 정보",
+
+    description:
+      knowledgeDescription,
+
+    path:
+      "/knowledge",
+
+    canonical:
+      !hasCategoryFilter,
+
+    robots:
+      hasCategoryFilter
+        ? {
+            index: false,
+            follow: true,
+          }
+        : undefined,
+  });
 }
 
 export default async function KnowledgePage({

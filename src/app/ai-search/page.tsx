@@ -1,17 +1,23 @@
-import type {
-  Metadata,
-} from "next";
-
 import { AISearchForm } from "@/components/ai/AISearchForm";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { PageHeader } from "@/components/layout/PageHeader";
 import { Callout } from "@/components/ui/Callout";
 
-export const metadata: Metadata = {
-  title: "AI로 찾기",
-  description:
-    "법률 용어를 몰라도 현재 상황을 문장으로 설명해 관련 인사노무 정보를 찾아보세요.",
-};
+import {
+  createPageMetadata,
+} from "@/lib/metadata";
+
+export const metadata =
+  createPageMetadata({
+    title:
+      "AI로 찾기",
+
+    description:
+      "법률 용어를 몰라도 현재 상황을 문장으로 설명해 관련 인사노무 정보를 찾아보세요.",
+
+    path:
+      "/ai-search",
+  });
 
 export default function AISearchPage() {
   return (

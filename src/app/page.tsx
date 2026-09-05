@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 
 import { KnowledgeCard } from "@/components/content/KnowledgeCard";
@@ -14,20 +13,31 @@ import {
   getAllGuideSituations,
   getKnowledgeBySlug,
 } from "@/lib/knowledge";
+import {
+  createPageMetadata,
+} from "@/lib/metadata";
+import {
+  SITE_TITLE,
+} from "@/lib/site";
 
 import type {
   GuideSituation,
   Knowledge,
 } from "@/types/content";
 
-export const metadata: Metadata = {
-  title: {
-    absolute:
-      "일로 | 일하다 궁금한 순간, 필요한 정보로",
-  },
-  description:
-    "법률 용어를 몰라도 자신의 상황에서 출발해 필요한 인사노무 정보와 공식 근거를 찾아볼 수 있습니다.",
-};
+export const metadata =
+  createPageMetadata({
+    title:
+      SITE_TITLE,
+
+    description:
+      "법률 용어를 몰라도 자신의 상황에서 출발해 필요한 인사노무 정보와 공식 근거를 찾아볼 수 있습니다.",
+
+    path: "/",
+
+    absoluteTitle:
+      true,
+  });
 
 /*
  * 실제 조회수 순위가 아니라

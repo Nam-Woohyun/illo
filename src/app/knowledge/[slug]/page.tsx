@@ -17,6 +17,9 @@ import {
   getRelatedKnowledge,
   getSourcesForKnowledge,
 } from "@/lib/knowledge";
+import {
+  createPageMetadata,
+} from "@/lib/metadata";
 
 import type { Knowledge } from "@/types/content";
 
@@ -47,13 +50,24 @@ export async function generateMetadata({
     return {
       title:
         "정보를 찾을 수 없습니다",
+
+      robots: {
+        index: false,
+        follow: false,
+      },
     };
   }
 
-  return {
-    title: item.title,
-    description: item.summary,
-  };
+  return createPageMetadata({
+    title:
+      item.title,
+
+    description:
+      item.summary,
+
+    path:
+      `/knowledge/${item.slug}`,
+  });
 }
 
 export default async function KnowledgeDetailPage({
