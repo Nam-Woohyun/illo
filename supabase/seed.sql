@@ -1,0 +1,3273 @@
+-- =========================================================
+-- ILLO Supabase Seed
+-- AUTO-GENERATED from src/data/*.ts
+--
+-- 직접 수정하지 말고:
+-- node scripts/generate-supabase-seed.mjs
+-- 를 다시 실행하세요.
+-- =========================================================
+
+begin;
+
+-- =========================================================
+-- Categories
+-- =========================================================
+
+insert into public.categories (
+  name,
+  slug
+)
+values (
+  '근로계약',
+  'employment-contract'
+)
+on conflict (slug)
+do update set
+  name = excluded.name;
+
+insert into public.categories (
+  name,
+  slug
+)
+values (
+  '임금·수당',
+  'wages-allowances'
+)
+on conflict (slug)
+do update set
+  name = excluded.name;
+
+insert into public.categories (
+  name,
+  slug
+)
+values (
+  '근로시간·휴식',
+  'working-hours-rest'
+)
+on conflict (slug)
+do update set
+  name = excluded.name;
+
+insert into public.categories (
+  name,
+  slug
+)
+values (
+  '휴가·휴일',
+  'leave-holidays'
+)
+on conflict (slug)
+do update set
+  name = excluded.name;
+
+insert into public.categories (
+  name,
+  slug
+)
+values (
+  '퇴직·해고',
+  'retirement-dismissal'
+)
+on conflict (slug)
+do update set
+  name = excluded.name;
+
+insert into public.categories (
+  name,
+  slug
+)
+values (
+  '직장 내 문제·보호',
+  'workplace-protection'
+)
+on conflict (slug)
+do update set
+  name = excluded.name;
+
+-- =========================================================
+-- Guide Situations
+-- =========================================================
+
+insert into public.guide_situations (
+  name,
+  slug
+)
+values (
+  '일을 시작할 때',
+  'start-work'
+)
+on conflict (slug)
+do update set
+  name = excluded.name;
+
+insert into public.guide_situations (
+  name,
+  slug
+)
+values (
+  '근무 조건이 궁금할 때',
+  'work-condition'
+)
+on conflict (slug)
+do update set
+  name = excluded.name;
+
+insert into public.guide_situations (
+  name,
+  slug
+)
+values (
+  '급여·수당이 궁금할 때',
+  'pay'
+)
+on conflict (slug)
+do update set
+  name = excluded.name;
+
+insert into public.guide_situations (
+  name,
+  slug
+)
+values (
+  '문제가 생겼을 때',
+  'problem'
+)
+on conflict (slug)
+do update set
+  name = excluded.name;
+
+insert into public.guide_situations (
+  name,
+  slug
+)
+values (
+  '일을 그만둘 때',
+  'leave-work'
+)
+on conflict (slug)
+do update set
+  name = excluded.name;
+
+-- =========================================================
+-- Sources
+-- =========================================================
+
+insert into public.sources (
+  source_type,
+  organization,
+  title,
+  url,
+  published_at,
+  effective_date,
+  law_name,
+  article_reference,
+  reference_number,
+  last_verified_at
+)
+values (
+  'law',
+  '법제처 국가법령정보센터',
+  '근로기준법',
+  'https://www.law.go.kr/법령/근로기준법',
+  '2026-02-19'::date,
+  '2026-08-20'::date,
+  '근로기준법',
+  null,
+  '법률 제21373호',
+  '2026-09-05'::date
+)
+on conflict (organization, title)
+do update set
+  source_type = excluded.source_type,
+  url = excluded.url,
+  published_at = excluded.published_at,
+  effective_date = excluded.effective_date,
+  law_name = excluded.law_name,
+  article_reference = excluded.article_reference,
+  reference_number = excluded.reference_number,
+  last_verified_at = excluded.last_verified_at;
+
+insert into public.sources (
+  source_type,
+  organization,
+  title,
+  url,
+  published_at,
+  effective_date,
+  law_name,
+  article_reference,
+  reference_number,
+  last_verified_at
+)
+values (
+  'law',
+  '법제처 국가법령정보센터',
+  '근로기준법 시행령',
+  'https://www.law.go.kr/법령/근로기준법시행령',
+  '2025-04-08'::date,
+  '2025-10-23'::date,
+  '근로기준법 시행령',
+  null,
+  '대통령령 제35436호',
+  '2026-09-05'::date
+)
+on conflict (organization, title)
+do update set
+  source_type = excluded.source_type,
+  url = excluded.url,
+  published_at = excluded.published_at,
+  effective_date = excluded.effective_date,
+  law_name = excluded.law_name,
+  article_reference = excluded.article_reference,
+  reference_number = excluded.reference_number,
+  last_verified_at = excluded.last_verified_at;
+
+insert into public.sources (
+  source_type,
+  organization,
+  title,
+  url,
+  published_at,
+  effective_date,
+  law_name,
+  article_reference,
+  reference_number,
+  last_verified_at
+)
+values (
+  'law',
+  '법제처 국가법령정보센터',
+  '근로기준법 일부개정법률',
+  'https://www.law.go.kr/법령/근로기준법',
+  '2026-06-09'::date,
+  null,
+  '근로기준법',
+  '제54조 관련 2026-12-10 시행, 제60조 관련 2027-06-10 시행',
+  '법률 제21784호',
+  '2026-09-05'::date
+)
+on conflict (organization, title)
+do update set
+  source_type = excluded.source_type,
+  url = excluded.url,
+  published_at = excluded.published_at,
+  effective_date = excluded.effective_date,
+  law_name = excluded.law_name,
+  article_reference = excluded.article_reference,
+  reference_number = excluded.reference_number,
+  last_verified_at = excluded.last_verified_at;
+
+insert into public.sources (
+  source_type,
+  organization,
+  title,
+  url,
+  published_at,
+  effective_date,
+  law_name,
+  article_reference,
+  reference_number,
+  last_verified_at
+)
+values (
+  'law',
+  '법제처 국가법령정보센터',
+  '근로기준법 시행규칙',
+  'https://www.law.go.kr/법령/근로기준법시행규칙',
+  null,
+  null,
+  '근로기준법 시행규칙',
+  '제4조 및 별표 1',
+  null,
+  '2026-09-05'::date
+)
+on conflict (organization, title)
+do update set
+  source_type = excluded.source_type,
+  url = excluded.url,
+  published_at = excluded.published_at,
+  effective_date = excluded.effective_date,
+  law_name = excluded.law_name,
+  article_reference = excluded.article_reference,
+  reference_number = excluded.reference_number,
+  last_verified_at = excluded.last_verified_at;
+
+insert into public.sources (
+  source_type,
+  organization,
+  title,
+  url,
+  published_at,
+  effective_date,
+  law_name,
+  article_reference,
+  reference_number,
+  last_verified_at
+)
+values (
+  'law',
+  '법제처 국가법령정보센터',
+  '기간제 및 단시간근로자 보호 등에 관한 법률',
+  'https://www.law.go.kr/법령/기간제및단시간근로자보호등에관한법률',
+  '2021-05-18'::date,
+  '2021-05-18'::date,
+  '기간제 및 단시간근로자 보호 등에 관한 법률',
+  '제17조, 제24조',
+  '법률 제18177호',
+  '2026-09-05'::date
+)
+on conflict (organization, title)
+do update set
+  source_type = excluded.source_type,
+  url = excluded.url,
+  published_at = excluded.published_at,
+  effective_date = excluded.effective_date,
+  law_name = excluded.law_name,
+  article_reference = excluded.article_reference,
+  reference_number = excluded.reference_number,
+  last_verified_at = excluded.last_verified_at;
+
+insert into public.sources (
+  source_type,
+  organization,
+  title,
+  url,
+  published_at,
+  effective_date,
+  law_name,
+  article_reference,
+  reference_number,
+  last_verified_at
+)
+values (
+  'government_guide',
+  '고용노동부',
+  '개정 「표준 근로계약서」 및 「표준 취업규칙」 게시',
+  'https://www.moel.go.kr/policy/policydata/view.do?bbs_seq=20250300356',
+  '2025-03-07'::date,
+  null,
+  null,
+  null,
+  null,
+  '2026-09-05'::date
+)
+on conflict (organization, title)
+do update set
+  source_type = excluded.source_type,
+  url = excluded.url,
+  published_at = excluded.published_at,
+  effective_date = excluded.effective_date,
+  law_name = excluded.law_name,
+  article_reference = excluded.article_reference,
+  reference_number = excluded.reference_number,
+  last_verified_at = excluded.last_verified_at;
+
+insert into public.sources (
+  source_type,
+  organization,
+  title,
+  url,
+  published_at,
+  effective_date,
+  law_name,
+  article_reference,
+  reference_number,
+  last_verified_at
+)
+values (
+  'government_guide',
+  '고용노동부 고객상담센터 1350',
+  '근로계약서 미작성 관련 상담 안내',
+  'https://1350.moel.go.kr',
+  '2026-04-06'::date,
+  null,
+  '근로기준법',
+  '제17조',
+  null,
+  '2026-09-05'::date
+)
+on conflict (organization, title)
+do update set
+  source_type = excluded.source_type,
+  url = excluded.url,
+  published_at = excluded.published_at,
+  effective_date = excluded.effective_date,
+  law_name = excluded.law_name,
+  article_reference = excluded.article_reference,
+  reference_number = excluded.reference_number,
+  last_verified_at = excluded.last_verified_at;
+
+insert into public.sources (
+  source_type,
+  organization,
+  title,
+  url,
+  published_at,
+  effective_date,
+  law_name,
+  article_reference,
+  reference_number,
+  last_verified_at
+)
+values (
+  'law',
+  '법제처 국가법령정보센터',
+  '최저임금법',
+  'https://www.law.go.kr/법령/최저임금법',
+  '2020-05-26'::date,
+  '2020-05-26'::date,
+  '최저임금법',
+  '제3조, 제5조, 제6조, 제7조, 제10조',
+  '법률 제17326호',
+  '2026-09-05'::date
+)
+on conflict (organization, title)
+do update set
+  source_type = excluded.source_type,
+  url = excluded.url,
+  published_at = excluded.published_at,
+  effective_date = excluded.effective_date,
+  law_name = excluded.law_name,
+  article_reference = excluded.article_reference,
+  reference_number = excluded.reference_number,
+  last_verified_at = excluded.last_verified_at;
+
+insert into public.sources (
+  source_type,
+  organization,
+  title,
+  url,
+  published_at,
+  effective_date,
+  law_name,
+  article_reference,
+  reference_number,
+  last_verified_at
+)
+values (
+  'law',
+  '법제처 국가법령정보센터',
+  '최저임금법 시행령',
+  'https://www.law.go.kr/법령/최저임금법시행령',
+  '2018-12-31'::date,
+  '2019-01-01'::date,
+  '최저임금법 시행령',
+  '제3조',
+  '대통령령 제29469호',
+  '2026-09-05'::date
+)
+on conflict (organization, title)
+do update set
+  source_type = excluded.source_type,
+  url = excluded.url,
+  published_at = excluded.published_at,
+  effective_date = excluded.effective_date,
+  law_name = excluded.law_name,
+  article_reference = excluded.article_reference,
+  reference_number = excluded.reference_number,
+  last_verified_at = excluded.last_verified_at;
+
+insert into public.sources (
+  source_type,
+  organization,
+  title,
+  url,
+  published_at,
+  effective_date,
+  law_name,
+  article_reference,
+  reference_number,
+  last_verified_at
+)
+values (
+  'government_guide',
+  '고용노동부',
+  '2026년 적용 최저임금 고시',
+  'https://www.moel.go.kr/info/lawinfo/instruction/view.do?bbs_seq=20250800121',
+  '2025-08-05'::date,
+  '2026-01-01'::date,
+  '최저임금법',
+  '제10조',
+  '고용노동부 고시 제2025-47호',
+  '2026-09-05'::date
+)
+on conflict (organization, title)
+do update set
+  source_type = excluded.source_type,
+  url = excluded.url,
+  published_at = excluded.published_at,
+  effective_date = excluded.effective_date,
+  law_name = excluded.law_name,
+  article_reference = excluded.article_reference,
+  reference_number = excluded.reference_number,
+  last_verified_at = excluded.last_verified_at;
+
+insert into public.sources (
+  source_type,
+  organization,
+  title,
+  url,
+  published_at,
+  effective_date,
+  law_name,
+  article_reference,
+  reference_number,
+  last_verified_at
+)
+values (
+  'government_guide',
+  '고용노동부',
+  '2026년 적용 최저임금 시간급 10,320원',
+  'https://www.moel.go.kr/news/enews/report/enewsView.do?news_seq=18144',
+  '2025-08-05'::date,
+  '2026-01-01'::date,
+  null,
+  null,
+  null,
+  '2026-09-05'::date
+)
+on conflict (organization, title)
+do update set
+  source_type = excluded.source_type,
+  url = excluded.url,
+  published_at = excluded.published_at,
+  effective_date = excluded.effective_date,
+  law_name = excluded.law_name,
+  article_reference = excluded.article_reference,
+  reference_number = excluded.reference_number,
+  last_verified_at = excluded.last_verified_at;
+
+insert into public.sources (
+  source_type,
+  organization,
+  title,
+  url,
+  published_at,
+  effective_date,
+  law_name,
+  article_reference,
+  reference_number,
+  last_verified_at
+)
+values (
+  'public_institution',
+  '최저임금위원회',
+  '2026년 적용 최저임금',
+  'https://www.minimumwage.go.kr/main.do',
+  null,
+  '2026-01-01'::date,
+  null,
+  null,
+  null,
+  '2026-09-05'::date
+)
+on conflict (organization, title)
+do update set
+  source_type = excluded.source_type,
+  url = excluded.url,
+  published_at = excluded.published_at,
+  effective_date = excluded.effective_date,
+  law_name = excluded.law_name,
+  article_reference = excluded.article_reference,
+  reference_number = excluded.reference_number,
+  last_verified_at = excluded.last_verified_at;
+
+insert into public.sources (
+  source_type,
+  organization,
+  title,
+  url,
+  published_at,
+  effective_date,
+  law_name,
+  article_reference,
+  reference_number,
+  last_verified_at
+)
+values (
+  'government_guide',
+  '고용노동부 노동포털',
+  '최저임금 제도 안내',
+  'https://labor.moel.go.kr/minwonSysInfo/minwagesys.do',
+  null,
+  null,
+  '최저임금법',
+  '제5조, 제6조',
+  null,
+  '2026-09-05'::date
+)
+on conflict (organization, title)
+do update set
+  source_type = excluded.source_type,
+  url = excluded.url,
+  published_at = excluded.published_at,
+  effective_date = excluded.effective_date,
+  law_name = excluded.law_name,
+  article_reference = excluded.article_reference,
+  reference_number = excluded.reference_number,
+  last_verified_at = excluded.last_verified_at;
+
+insert into public.sources (
+  source_type,
+  organization,
+  title,
+  url,
+  published_at,
+  effective_date,
+  law_name,
+  article_reference,
+  reference_number,
+  last_verified_at
+)
+values (
+  'government_guide',
+  '고용노동부 고객상담센터 1350',
+  '소정근로시간 관련 상담 안내',
+  'https://1350.moel.go.kr/rtmview.do?id=1000059852',
+  null,
+  null,
+  '근로기준법',
+  '제2조, 제50조',
+  null,
+  '2026-09-05'::date
+)
+on conflict (organization, title)
+do update set
+  source_type = excluded.source_type,
+  url = excluded.url,
+  published_at = excluded.published_at,
+  effective_date = excluded.effective_date,
+  law_name = excluded.law_name,
+  article_reference = excluded.article_reference,
+  reference_number = excluded.reference_number,
+  last_verified_at = excluded.last_verified_at;
+
+insert into public.sources (
+  source_type,
+  organization,
+  title,
+  url,
+  published_at,
+  effective_date,
+  law_name,
+  article_reference,
+  reference_number,
+  last_verified_at
+)
+values (
+  'government_guide',
+  '고용노동부 고객상담센터 1350',
+  '연차유급휴가 발생 기준 안내',
+  'https://1350.moel.go.kr/rtmview.do?id=1000012468',
+  null,
+  null,
+  '근로기준법',
+  '제60조',
+  null,
+  '2026-09-05'::date
+)
+on conflict (organization, title)
+do update set
+  source_type = excluded.source_type,
+  url = excluded.url,
+  published_at = excluded.published_at,
+  effective_date = excluded.effective_date,
+  law_name = excluded.law_name,
+  article_reference = excluded.article_reference,
+  reference_number = excluded.reference_number,
+  last_verified_at = excluded.last_verified_at;
+
+insert into public.sources (
+  source_type,
+  organization,
+  title,
+  url,
+  published_at,
+  effective_date,
+  law_name,
+  article_reference,
+  reference_number,
+  last_verified_at
+)
+values (
+  'government_guide',
+  '고용노동부 고객상담센터 1350',
+  '5인 미만 사업장의 연차 적용 안내',
+  'https://1350.moel.go.kr/rtmview.do?id=1000293448',
+  '2026-02-12'::date,
+  null,
+  '근로기준법',
+  '제60조',
+  null,
+  '2026-09-05'::date
+)
+on conflict (organization, title)
+do update set
+  source_type = excluded.source_type,
+  url = excluded.url,
+  published_at = excluded.published_at,
+  effective_date = excluded.effective_date,
+  law_name = excluded.law_name,
+  article_reference = excluded.article_reference,
+  reference_number = excluded.reference_number,
+  last_verified_at = excluded.last_verified_at;
+
+insert into public.sources (
+  source_type,
+  organization,
+  title,
+  url,
+  published_at,
+  effective_date,
+  law_name,
+  article_reference,
+  reference_number,
+  last_verified_at
+)
+values (
+  'law',
+  '법제처 국가법령정보센터',
+  '근로자퇴직급여 보장법',
+  'https://www.law.go.kr/법령/근로자퇴직급여보장법',
+  '2026-03-17'::date,
+  '2026-07-01'::date,
+  '근로자퇴직급여 보장법',
+  '제4조, 제8조, 제9조',
+  '법률 제21475호',
+  '2026-09-05'::date
+)
+on conflict (organization, title)
+do update set
+  source_type = excluded.source_type,
+  url = excluded.url,
+  published_at = excluded.published_at,
+  effective_date = excluded.effective_date,
+  law_name = excluded.law_name,
+  article_reference = excluded.article_reference,
+  reference_number = excluded.reference_number,
+  last_verified_at = excluded.last_verified_at;
+
+insert into public.sources (
+  source_type,
+  organization,
+  title,
+  url,
+  published_at,
+  effective_date,
+  law_name,
+  article_reference,
+  reference_number,
+  last_verified_at
+)
+values (
+  'law',
+  '법제처 국가법령정보센터',
+  '근로자퇴직급여 보장법 시행령',
+  'https://www.law.go.kr/법령/근로자퇴직급여보장법시행령',
+  null,
+  '2026-03-24'::date,
+  '근로자퇴직급여 보장법 시행령',
+  '제9조 등',
+  '대통령령 제36220호',
+  '2026-09-05'::date
+)
+on conflict (organization, title)
+do update set
+  source_type = excluded.source_type,
+  url = excluded.url,
+  published_at = excluded.published_at,
+  effective_date = excluded.effective_date,
+  law_name = excluded.law_name,
+  article_reference = excluded.article_reference,
+  reference_number = excluded.reference_number,
+  last_verified_at = excluded.last_verified_at;
+
+insert into public.sources (
+  source_type,
+  organization,
+  title,
+  url,
+  published_at,
+  effective_date,
+  law_name,
+  article_reference,
+  reference_number,
+  last_verified_at
+)
+values (
+  'government_guide',
+  '고용노동부',
+  '퇴직금 및 평균임금 산정 공식 FAQ',
+  'https://www.moel.go.kr/faq/faqView.do?seqRepeat=89',
+  null,
+  null,
+  '근로자퇴직급여 보장법',
+  null,
+  null,
+  '2026-09-05'::date
+)
+on conflict (organization, title)
+do update set
+  source_type = excluded.source_type,
+  url = excluded.url,
+  published_at = excluded.published_at,
+  effective_date = excluded.effective_date,
+  law_name = excluded.law_name,
+  article_reference = excluded.article_reference,
+  reference_number = excluded.reference_number,
+  last_verified_at = excluded.last_verified_at;
+
+insert into public.sources (
+  source_type,
+  organization,
+  title,
+  url,
+  published_at,
+  effective_date,
+  law_name,
+  article_reference,
+  reference_number,
+  last_verified_at
+)
+values (
+  'government_guide',
+  '고용노동부 고객상담센터 1350',
+  '퇴직금 지급요건 및 지급기한 안내',
+  'https://1350.moel.go.kr/rtmview.do?id=1000318702',
+  '2026-07-24'::date,
+  null,
+  '근로자퇴직급여 보장법',
+  null,
+  null,
+  '2026-09-05'::date
+)
+on conflict (organization, title)
+do update set
+  source_type = excluded.source_type,
+  url = excluded.url,
+  published_at = excluded.published_at,
+  effective_date = excluded.effective_date,
+  law_name = excluded.law_name,
+  article_reference = excluded.article_reference,
+  reference_number = excluded.reference_number,
+  last_verified_at = excluded.last_verified_at;
+
+insert into public.sources (
+  source_type,
+  organization,
+  title,
+  url,
+  published_at,
+  effective_date,
+  law_name,
+  article_reference,
+  reference_number,
+  last_verified_at
+)
+values (
+  'government_guide',
+  '고용노동부',
+  '해고예고수당 적용 여부 FAQ',
+  'https://www.moel.go.kr/faq/faqView.do?seqRepeat=58',
+  null,
+  null,
+  '근로기준법',
+  '제26조',
+  null,
+  '2026-09-05'::date
+)
+on conflict (organization, title)
+do update set
+  source_type = excluded.source_type,
+  url = excluded.url,
+  published_at = excluded.published_at,
+  effective_date = excluded.effective_date,
+  law_name = excluded.law_name,
+  article_reference = excluded.article_reference,
+  reference_number = excluded.reference_number,
+  last_verified_at = excluded.last_verified_at;
+
+insert into public.sources (
+  source_type,
+  organization,
+  title,
+  url,
+  published_at,
+  effective_date,
+  law_name,
+  article_reference,
+  reference_number,
+  last_verified_at
+)
+values (
+  'government_guide',
+  '고용노동부 고객상담센터 1350',
+  '5인 미만 사업장 해고예고 안내',
+  'https://1350.moel.go.kr/rtmview.do?id=1000319350',
+  '2026-03-06'::date,
+  null,
+  '근로기준법',
+  '제26조',
+  null,
+  '2026-09-05'::date
+)
+on conflict (organization, title)
+do update set
+  source_type = excluded.source_type,
+  url = excluded.url,
+  published_at = excluded.published_at,
+  effective_date = excluded.effective_date,
+  law_name = excluded.law_name,
+  article_reference = excluded.article_reference,
+  reference_number = excluded.reference_number,
+  last_verified_at = excluded.last_verified_at;
+
+insert into public.sources (
+  source_type,
+  organization,
+  title,
+  url,
+  published_at,
+  effective_date,
+  law_name,
+  article_reference,
+  reference_number,
+  last_verified_at
+)
+values (
+  'government_guide',
+  '고용노동부 노동포털',
+  '진정서(체불, 직장 내 괴롭힘, 기타 노동법 위반)',
+  'https://labor.moel.go.kr/minwonApply/minwonFormat.do?searchVal=SN001',
+  null,
+  null,
+  '근로기준법',
+  '제104조 관련',
+  null,
+  '2026-09-05'::date
+)
+on conflict (organization, title)
+do update set
+  source_type = excluded.source_type,
+  url = excluded.url,
+  published_at = excluded.published_at,
+  effective_date = excluded.effective_date,
+  law_name = excluded.law_name,
+  article_reference = excluded.article_reference,
+  reference_number = excluded.reference_number,
+  last_verified_at = excluded.last_verified_at;
+
+insert into public.sources (
+  source_type,
+  organization,
+  title,
+  url,
+  published_at,
+  effective_date,
+  law_name,
+  article_reference,
+  reference_number,
+  last_verified_at
+)
+values (
+  'government_guide',
+  '고용노동부 노동포털',
+  '체불임금 해결방법',
+  'https://labor.moel.go.kr/minwonSysInfo/wagesolway.do',
+  null,
+  null,
+  '근로기준법',
+  '제36조, 제43조',
+  null,
+  '2026-09-05'::date
+)
+on conflict (organization, title)
+do update set
+  source_type = excluded.source_type,
+  url = excluded.url,
+  published_at = excluded.published_at,
+  effective_date = excluded.effective_date,
+  law_name = excluded.law_name,
+  article_reference = excluded.article_reference,
+  reference_number = excluded.reference_number,
+  last_verified_at = excluded.last_verified_at;
+
+insert into public.sources (
+  source_type,
+  organization,
+  title,
+  url,
+  published_at,
+  effective_date,
+  law_name,
+  article_reference,
+  reference_number,
+  last_verified_at
+)
+values (
+  'government_guide',
+  '고용노동부 고객상담센터 1350',
+  '임금체불 진정 및 증빙자료 안내',
+  'https://1350.moel.go.kr/rtmview.do?id=1000323154',
+  '2026-05-14'::date,
+  null,
+  '근로기준법',
+  null,
+  null,
+  '2026-09-05'::date
+)
+on conflict (organization, title)
+do update set
+  source_type = excluded.source_type,
+  url = excluded.url,
+  published_at = excluded.published_at,
+  effective_date = excluded.effective_date,
+  law_name = excluded.law_name,
+  article_reference = excluded.article_reference,
+  reference_number = excluded.reference_number,
+  last_verified_at = excluded.last_verified_at;
+
+insert into public.sources (
+  source_type,
+  organization,
+  title,
+  url,
+  published_at,
+  effective_date,
+  law_name,
+  article_reference,
+  reference_number,
+  last_verified_at
+)
+values (
+  'government_guide',
+  '고용노동부',
+  '직장 내 괴롭힘 예방·대응 매뉴얼(''26.7월)',
+  'https://www.moel.go.kr/local/seoulnambu/info/policydata/view.do?bbs_seq=20260701008',
+  '2026-07-29'::date,
+  null,
+  '근로기준법',
+  '제76조의2, 제76조의3',
+  null,
+  '2026-09-05'::date
+)
+on conflict (organization, title)
+do update set
+  source_type = excluded.source_type,
+  url = excluded.url,
+  published_at = excluded.published_at,
+  effective_date = excluded.effective_date,
+  law_name = excluded.law_name,
+  article_reference = excluded.article_reference,
+  reference_number = excluded.reference_number,
+  last_verified_at = excluded.last_verified_at;
+
+insert into public.sources (
+  source_type,
+  organization,
+  title,
+  url,
+  published_at,
+  effective_date,
+  law_name,
+  article_reference,
+  reference_number,
+  last_verified_at
+)
+values (
+  'government_guide',
+  '고용노동부 고객상담센터 1350',
+  '직장 내 괴롭힘 판단요소 안내',
+  'https://1350.moel.go.kr/rtmview.do?id=1000319300',
+  '2026-03-05'::date,
+  null,
+  '근로기준법',
+  '제76조의2',
+  null,
+  '2026-09-05'::date
+)
+on conflict (organization, title)
+do update set
+  source_type = excluded.source_type,
+  url = excluded.url,
+  published_at = excluded.published_at,
+  effective_date = excluded.effective_date,
+  law_name = excluded.law_name,
+  article_reference = excluded.article_reference,
+  reference_number = excluded.reference_number,
+  last_verified_at = excluded.last_verified_at;
+
+insert into public.sources (
+  source_type,
+  organization,
+  title,
+  url,
+  published_at,
+  effective_date,
+  law_name,
+  article_reference,
+  reference_number,
+  last_verified_at
+)
+values (
+  'government_guide',
+  '고용노동부 고객상담센터 1350',
+  '직장 내 괴롭힘 관련 증빙자료 안내',
+  'https://1350.moel.go.kr/rtmview.do?id=1000317041',
+  '2026-02-06'::date,
+  null,
+  '근로기준법',
+  null,
+  null,
+  '2026-09-05'::date
+)
+on conflict (organization, title)
+do update set
+  source_type = excluded.source_type,
+  url = excluded.url,
+  published_at = excluded.published_at,
+  effective_date = excluded.effective_date,
+  law_name = excluded.law_name,
+  article_reference = excluded.article_reference,
+  reference_number = excluded.reference_number,
+  last_verified_at = excluded.last_verified_at;
+
+-- =========================================================
+-- Knowledge
+-- =========================================================
+
+insert into public.knowledge (
+  title,
+  slug,
+  summary,
+  easy_explanation,
+  applies_to,
+  key_points,
+  examples,
+  check_points,
+  category_id,
+  keywords,
+  intents,
+  related_questions,
+  status,
+  published_at,
+  last_reviewed_at,
+  updated_at
+)
+values (
+  '근로계약서',
+  'employment-contract',
+  '근로계약을 체결할 때는 임금, 근로시간, 휴일 등 중요한 근로조건을 확인해야 하며, 법에서 정한 주요 사항은 서면이나 전자문서로 근로자에게 전달되어야 합니다.',
+  '근로계약서는 어떤 일을, 어디에서, 얼마나 일하고, 얼마를 받을지를 확인하는 문서입니다. 근로기준법은 근로계약을 체결할 때 중요한 근로조건을 명시하도록 하고 있으며, 그중 법에서 정한 핵심 사항은 서면이나 전자문서로 근로자에게 전달하도록 정하고 있습니다. 단순히 계약서에 서명했다는 사실만 보는 것이 아니라 실제로 어떤 조건이 적혀 있었는지, 근로자가 그 문서를 전달받았는지를 함께 확인하는 것이 중요합니다.',
+  array['처음 회사나 아르바이트에서 일을 시작하는 경우', '근로계약서를 작성하지 않은 경우', '계약서에 서명했지만 사본을 받지 못한 경우', '면접에서 들은 근로조건과 계약서 내용이 다른 경우', '근무 중 임금이나 근로시간 등 조건이 변경된 경우', '기간제 또는 단시간근로자로 일하는 경우']::text[],
+  '[{"title":"근로계약을 할 때 무엇을 확인해야 하나요?","body":"근로계약을 체결할 때에는 임금, 소정근로시간, 휴일, 연차유급휴가 등 법에서 정한 중요한 근로조건을 확인해야 합니다. 시행령에서는 근무 장소와 담당 업무 등 추가적인 근로조건도 규정하고 있습니다."},{"title":"계약서를 작성만 하면 끝인가요?","body":"그렇지 않습니다. 근로기준법이 정한 임금의 구성항목·계산방법·지급방법, 소정근로시간, 휴일, 연차유급휴가 등에 관한 사항은 서면 또는 전자문서로 근로자에게 전달되어야 합니다. 따라서 서명 여부와 별개로 근로자가 실제 문서를 받았는지도 확인할 필요가 있습니다."},{"title":"근로조건이 바뀌면 어떻게 되나요?","body":"근로계약 체결 이후 근로조건이 변경되는 경우에도 변경된 내용을 확인해야 합니다. 다만 단체협약이나 취업규칙 변경 등 법에서 정한 사유로 근로조건이 변경된 경우에는 서면 교부 방식에 별도의 규정이 적용될 수 있습니다."},{"title":"기간제·단시간근로자는 확인할 내용이 다른가요?","body":"기간제 또는 단시간근로자에게는 근로계약기간, 근로시간과 휴게, 임금, 휴일·휴가, 근무장소와 업무 등의 사항을 서면으로 명시해야 하는 별도의 규정이 있습니다. 단시간근로자의 경우 근로일과 근로일별 근로시간도 확인 대상이 됩니다."},{"title":"법보다 불리한 내용을 계약서에 쓰면 그대로 적용되나요?","body":"근로계약서에 적혀 있다는 이유만으로 법에서 정한 최저기준보다 낮은 근로조건이 모두 인정되는 것은 아닙니다. 법정 기준에 미치지 못하는 부분은 해당 법률에 따라 효력이 제한될 수 있으므로 계약서 내용과 법정 기준을 함께 확인해야 합니다."}]'::jsonb,
+  '[{"title":"상황 예시","body":"A씨는 아르바이트를 시작하면서 시간당 12,000원, 월요일부터 금요일까지 근무하기로 구두로 들었습니다. 계약서에는 서명했지만 자신의 계약서 사본은 받지 못했습니다. 이후 실제 근로시간과 급여일을 확인하려고 했지만 가지고 있는 문서가 없어 어려움을 겪었습니다. 이 경우 계약서에 임금과 소정근로시간, 휴일 등이 어떻게 적혀 있는지, 서면 또는 전자문서를 실제로 전달받았는지 확인할 필요가 있습니다. 단시간근로자라면 근로일과 근로일별 근로시간 등 추가적인 명시사항도 함께 확인할 수 있습니다."}]'::jsonb,
+  '[{"title":"작성과 교부는 구분해서 확인하세요.","body":"계약서에 서명했다는 사실과 근로자가 그 내용을 확인할 수 있는 서면 또는 전자문서를 전달받았는지는 서로 구분해서 볼 필요가 있습니다."},{"title":"근로형태에 따라 확인할 항목이 달라질 수 있습니다.","body":"기간제·단시간근로자 등은 일반적인 근로계약 외에 별도로 명시해야 하는 내용이 있을 수 있습니다."},{"title":"계약서가 법정 최저기준보다 우선하는 것은 아닙니다.","body":"근로계약에 적힌 내용이 법에서 정한 기준보다 낮다면 해당 법률의 적용 여부를 함께 확인해야 합니다."},{"title":"미작성이나 미교부 문제가 있다면 공식 상담절차를 확인할 수 있습니다.","body":"사업장 소재지 관할 지방고용노동관서 또는 고용노동부의 상담·민원 절차를 통해 구체적인 사실관계를 확인할 수 있습니다."}]'::jsonb,
+  (
+    select id
+    from public.categories
+    where slug = 'employment-contract'
+  ),
+  array['근로계약서', '근로계약', '근로조건', '알바 계약서', '아르바이트 계약서', '계약직 계약서', '계약서 안 씀', '계약서 안 써줌', '근로계약서 미작성', '근로계약서 안 줌', '계약서 사본', '전자 근로계약서', '근무조건', '근로계약서 작성']::text[],
+  array['근로계약서를 작성해야 하는지 확인', '근로계약서에 들어가야 할 내용 확인', '근로계약서를 받지 못한 상황 확인', '근로계약서 미작성 문제 대응', '작성한 계약 내용과 실제 근로조건 비교', '기간제·단시간근로자의 계약서 확인']::text[],
+  array['알바 시작했는데 근로계약서를 안 써줬어요.', '근로계약서는 꼭 작성해야 하나요?', '계약서에 사인했는데 제 계약서는 못 받았어요.', '근로계약서에는 뭐가 적혀 있어야 하나요?', '회사에서 계약서를 나중에 쓰자고 하는데 괜찮나요?', '근로계약서랑 실제 월급이 다른데 어떻게 해야 하나요?', '알바 계약서를 안 쓰고 일해도 되나요?', '전자문서로 근로계약서를 받아도 되나요?']::text[],
+  'published',
+  null,
+  '2026-09-05'::date,
+  '2026-09-05T00:00:00.000Z'::timestamptz
+)
+on conflict (slug)
+do update set
+  title = excluded.title,
+  summary = excluded.summary,
+  easy_explanation = excluded.easy_explanation,
+  applies_to = excluded.applies_to,
+  key_points = excluded.key_points,
+  examples = excluded.examples,
+  check_points = excluded.check_points,
+  category_id = excluded.category_id,
+  keywords = excluded.keywords,
+  intents = excluded.intents,
+  related_questions = excluded.related_questions,
+  status = excluded.status,
+  published_at = excluded.published_at,
+  last_reviewed_at = excluded.last_reviewed_at,
+  updated_at = excluded.updated_at;
+
+insert into public.knowledge (
+  title,
+  slug,
+  summary,
+  easy_explanation,
+  applies_to,
+  key_points,
+  examples,
+  check_points,
+  category_id,
+  keywords,
+  intents,
+  related_questions,
+  status,
+  published_at,
+  last_reviewed_at,
+  updated_at
+)
+values (
+  '최저임금',
+  'minimum-wage',
+  '2026년 최저임금은 시간당 10,320원이며, 원칙적으로 최저임금 적용 대상 근로자에게는 이보다 낮은 수준의 임금을 정할 수 없습니다.',
+  '최저임금은 일을 하는 근로자에게 지급해야 하는 임금의 최소 기준입니다. 2026년 현재 시간급 최저임금은 10,320원입니다. 하루 8시간을 기준으로 계산하면 82,560원이고, 주 40시간 근무하면서 주당 유급주휴 8시간이 포함되는 경우 월 환산액은 2,156,880원입니다. 다만 2,156,880원이 모든 근로자에게 똑같이 적용되는 최저 월급이라는 뜻은 아닙니다. 이 금액은 월 환산 209시간을 전제로 계산한 값이며 실제 소정근로시간이나 주휴 적용 여부 등에 따라 비교 방식이 달라질 수 있습니다.',
+  array['처음 취업하거나 아르바이트를 시작하면서 시급을 확인하는 경우', '현재 받고 있는 시급이 너무 낮은 것 같은 경우', '월급을 시급으로 환산해 최저임금 이상인지 확인하고 싶은 경우', '수습기간이라며 임금을 적게 지급한다고 들은 경우', '근로계약서에 적힌 임금이 최저임금보다 낮아 보이는 경우', '식비나 수당 등을 포함하면 최저임금 이상이라는 설명을 들은 경우']::text[],
+  '[{"title":"2026년 최저임금은 얼마인가요?","body":"2026년 적용 최저임금은 시간급 10,320원입니다. 하루 8시간 기준 일급은 82,560원이며, 주 40시간과 주당 유급주휴 8시간을 포함한 월 209시간 기준 월 환산액은 2,156,880원입니다."},{"title":"누구에게 적용되나요?","body":"최저임금법은 원칙적으로 근로자를 사용하는 모든 사업 또는 사업장에 적용됩니다. 회사 규모가 작거나 아르바이트라는 이유만으로 자동 제외되는 것은 아닙니다. 다만 법에서 정한 일부 적용 제외 범위나 별도 인가가 필요한 예외가 있으므로 특수한 근로형태는 추가 확인이 필요합니다."},{"title":"계약서에 더 낮은 시급을 적으면 괜찮나요?","body":"최저임금 적용 대상 근로자의 근로계약에서 법정 최저임금보다 낮은 임금을 정한 부분은 그대로 인정되지 않습니다. 당사자가 동의했다는 이유만으로 최저임금 기준이 없어지는 것은 아닙니다."},{"title":"월급이 2,156,880원보다 적으면 무조건 위반인가요?","body":"그렇게 바로 판단하면 안 됩니다. 월 환산액 2,156,880원은 주 40시간 근무와 주당 유급주휴 8시간을 포함한 월 209시간을 전제로 한 금액입니다. 근로시간이 다른 근로자는 실제 소정근로시간과 임금 구성 등을 함께 확인해야 합니다."},{"title":"수습기간이면 최저임금보다 적게 받을 수 있나요?","body":"모든 수습근로자의 임금을 낮출 수 있는 것은 아닙니다. 1년 이상의 기간을 정한 근로계약, 실제 수습 중인지 여부, 수습 시작일부터 3개월 이내인지 여부 등 법정 요건이 관련됩니다. 단순노무업무에 종사하는 근로자에게는 해당 감액 규정이 적용되지 않습니다."}]'::jsonb,
+  '[{"title":"상황 예시","body":"A씨는 카페에서 아르바이트를 시작했고 사업주로부터 처음 두 달은 교육기간이므로 시간당 9,500원을 지급한다는 설명을 들었습니다. 이 경우 단순히 교육기간이나 수습기간이라고 부른다는 사실만으로 최저임금을 낮출 수 있다고 판단하면 안 됩니다. 근로계약기간, 실제 수습근로자인지, 수습 시작 후 3개월 이내인지, 단순노무업무에 해당하는지 등을 확인할 필요가 있습니다."}]'::jsonb,
+  '[{"title":"최저임금은 적용 연도를 확인하세요.","body":"최저임금은 매년 달라질 수 있으므로 근무한 시점에 적용되던 최저임금을 기준으로 확인해야 합니다."},{"title":"고시일과 실제 적용일은 다를 수 있습니다.","body":"다음 연도의 최저임금이 미리 발표되더라도 실제 효력 발생일 전에는 현재 임금에 바로 적용되는 것이 아닙니다."},{"title":"월 환산액에는 계산 전제가 있습니다.","body":"2026년 월 환산액 2,156,880원은 주 40시간과 주당 유급주휴 8시간을 포함한 월 209시간 기준입니다."},{"title":"수습이라고 자동으로 10% 감액되는 것은 아닙니다.","body":"근로계약기간, 수습기간, 실제 업무의 종류 등 법정 요건을 함께 확인해야 합니다."},{"title":"실제 지급액 전체를 그대로 비교하지 마세요.","body":"최저임금 산입 여부가 임금 항목마다 달라질 수 있으므로 급여 구성과 근로시간을 함께 확인해야 합니다."}]'::jsonb,
+  (
+    select id
+    from public.categories
+    where slug = 'wages-allowances'
+  ),
+  array['최저임금', '최저시급', '2026 최저임금', '2026 최저시급', '올해 시급', '알바 시급', '아르바이트 시급', '최저 월급', '월급 최저금액', '최저임금보다 적게 받음', '시급이 너무 적음', '수습 최저임금', '수습기간 시급', '최저임금 90%', '월급 최저임금 계산']::text[],
+  array['현재 적용되는 최저임금 금액 확인', '자신의 시급이 최저임금 이상인지 확인', '아르바이트 최저임금 확인', '월급을 최저임금과 비교', '수습기간 최저임금 감액 가능 여부 확인', '근로계약서에 적힌 임금이 최저임금에 미달하는지 확인', '최저임금에 어떤 임금 항목이 포함되는지 확인']::text[],
+  array['지금 최저시급이 얼마예요?', '2026년 알바 최저시급 얼마인가요?', '알바비가 최저임금보다 적은 것 같아요.', '수습기간이면 최저임금보다 적게 받아도 되나요?', '월급이 210만원 정도인데 최저임금보다 적은 건가요?', '사장님이 처음 3개월은 시급 90%만 준다는데 가능한가요?', '근로계약서에 최저시급보다 적게 적혀 있으면 어떻게 되나요?', '식비 포함해서 최저임금 넘는다고 하는데 맞나요?', '주 20시간 알바도 월 최저임금 215만원을 받아야 하나요?']::text[],
+  'published',
+  null,
+  '2026-09-05'::date,
+  '2026-09-05T00:00:00.000Z'::timestamptz
+)
+on conflict (slug)
+do update set
+  title = excluded.title,
+  summary = excluded.summary,
+  easy_explanation = excluded.easy_explanation,
+  applies_to = excluded.applies_to,
+  key_points = excluded.key_points,
+  examples = excluded.examples,
+  check_points = excluded.check_points,
+  category_id = excluded.category_id,
+  keywords = excluded.keywords,
+  intents = excluded.intents,
+  related_questions = excluded.related_questions,
+  status = excluded.status,
+  published_at = excluded.published_at,
+  last_reviewed_at = excluded.last_reviewed_at,
+  updated_at = excluded.updated_at;
+
+insert into public.knowledge (
+  title,
+  slug,
+  summary,
+  easy_explanation,
+  applies_to,
+  key_points,
+  examples,
+  check_points,
+  category_id,
+  keywords,
+  intents,
+  related_questions,
+  status,
+  published_at,
+  last_reviewed_at,
+  updated_at
+)
+values (
+  '법정 근로시간',
+  'statutory-working-hours',
+  '상시 5명 이상 사업장의 일반적인 성인 근로자는 원칙적으로 휴게시간을 제외하고 1일 8시간, 1주 40시간이 법정 근로시간 기준이며, 당사자 간 합의가 있으면 원칙적으로 1주 12시간 한도에서 연장근로를 할 수 있습니다.',
+  '법정 근로시간은 회사와 근로자가 마음대로 정하는 시간이 아니라 법에서 정한 기본적인 근로시간의 상한 기준입니다. 일반적인 경우 휴게시간을 제외하고 하루 8시간, 일주일 40시간이 기본입니다. 하지만 하루에 8시간을 조금이라도 넘겨 일하면 무조건 불법이라고 이해하면 정확하지 않습니다. 법에서는 당사자 간 합의가 있으면 원칙적으로 1주 12시간 한도에서 연장근로를 할 수 있도록 하고 있습니다. 사업장 규모, 연령, 업무 종류, 유연근로시간제 적용 여부 등에 따라 별도 확인이 필요한 경우도 있습니다.',
+  array['회사에서 매일 9시간에서 10시간씩 일하고 있는 경우', '근로계약서에 하루 근무시간이 몇 시간인지 확인하고 싶은 경우', '주 40시간과 주 52시간의 차이가 궁금한 경우', '점심시간도 근로시간에 포함되는지 궁금한 경우', '정해진 퇴근시간 이후 계속 일하고 있는 경우', '아르바이트나 소규모 사업장에도 같은 기준이 적용되는지 궁금한 경우']::text[],
+  '[{"title":"기본적인 법정 근로시간은 얼마인가요?","body":"근로기준법의 기본 원칙은 휴게시간을 제외하고 1주 40시간, 1일 8시간입니다. 회사에 머문 전체 시간과 실제 근로시간은 휴게시간 여부에 따라 다를 수 있습니다."},{"title":"법정 근로시간과 소정근로시간은 다른가요?","body":"법정 근로시간은 법이 정한 상한 기준이고, 소정근로시간은 그 범위 안에서 근로자와 사용자가 실제로 일하기로 약속한 시간입니다. 예를 들어 하루 6시간씩 주 5일 일하기로 했다면 소정근로시간은 주 30시간이 될 수 있습니다."},{"title":"하루 8시간을 넘겨 일하면 모두 불법인가요?","body":"그렇게 단순하게 판단하면 안 됩니다. 당사자 간 합의가 있는 경우 원칙적으로 1주 12시간 한도에서 법정 근로시간을 연장할 수 있습니다. 실제 판단에서는 연장근로 합의, 주간 연장시간, 적용되는 근로시간제도 등을 함께 확인해야 합니다."},{"title":"휴게시간도 근로시간인가요?","body":"근로자가 자유롭게 이용할 수 있는 휴게시간은 원칙적으로 근로시간에서 제외됩니다. 반대로 사용자의 지휘·감독 아래 작업을 위해 대기하는 시간은 근로시간으로 볼 수 있습니다."},{"title":"모든 사업장에 같은 기준이 적용되나요?","body":"근로기준법은 원칙적으로 상시 5명 이상의 근로자를 사용하는 사업 또는 사업장에 적용됩니다. 상시 4명 이하 사업장은 일부 규정만 적용되므로 일반적인 주 40시간·주 52시간 기준이 동일하게 적용된다고 단정해서는 안 됩니다."},{"title":"근로자에 따라 다른 기준도 있나요?","body":"15세 이상 18세 미만 근로자는 일반 성인근로자보다 더 짧은 근로시간 기준이 적용됩니다. 농림·축산·수산업의 일부 근로자나 고용노동부 승인을 받은 감시·단속적 근로자 등도 별도 규정이 적용될 수 있습니다."}]'::jsonb,
+  '[{"title":"상황 예시","body":"A씨의 계약상 근무시간은 월요일부터 금요일까지 오전 9시에서 오후 6시까지이고, 점심시간 1시간은 자유롭게 사용하는 휴게시간입니다. 최근 일이 많아 매일 오후 8시까지 일하고 있습니다. 이 경우 단순히 하루 8시간을 넘었다는 사실만으로 결론을 내리기보다 실제 연장근로 시간이 얼마인지, 주 전체 연장근로가 어느 정도인지, 연장근로 합의가 있었는지, 휴게시간이 실제로 보장되었는지, 사업장이 관련 근로시간 규정의 적용 대상인지 등을 함께 확인해야 합니다."}]'::jsonb,
+  '[{"title":"회사에 있는 시간과 근로시간은 반드시 같지 않습니다.","body":"자유롭게 이용할 수 있는 휴게시간은 원칙적으로 근로시간에서 제외되지만 사용자의 지휘·감독 아래 있는 대기시간은 근로시간이 될 수 있습니다."},{"title":"주 52시간은 일반적인 구조입니다.","body":"기본 40시간에 합의 가능한 연장근로 12시간을 더한 구조이며 사업장·근로자·근무제도에 따라 별도 확인이 필요합니다."},{"title":"5인 미만 사업장은 적용 규정이 다릅니다.","body":"상시 4명 이하 사업장에는 근로기준법의 근로시간 관련 일부 조항이 동일하게 적용되지 않을 수 있습니다."},{"title":"18세 미만 근로자는 별도 기준이 있습니다.","body":"청소년 근로자는 일반 성인 근로자보다 짧은 근로시간 기준이 적용됩니다."},{"title":"향후 시행 예정인 휴게시간 개정과 현행 기준을 구분하세요.","body":"2026년 9월 현재에는 현행 휴게시간 기준을 적용해야 하며, 2026년 12월 10일부터 시행되는 개정 내용은 시행 전 사건에 현재 기준처럼 적용하면 안 됩니다."}]'::jsonb,
+  (
+    select id
+    from public.categories
+    where slug = 'working-hours-rest'
+  ),
+  array['법정 근로시간', '근로시간', '근무시간', '주40시간', '주52시간', '하루8시간', '8시간 초과', '야근', '초과근무', '매일 10시간 근무', '소정근로시간', '점심시간 근로시간', '대기시간', '5인 미만 근로시간', '알바 근무시간']::text[],
+  array['법정 근로시간 기준 확인', '하루에 몇 시간까지 일할 수 있는지 확인', '주 40시간과 주 52시간 차이 이해', '소정근로시간과 법정근로시간 구분', '장시간 근무가 법적 기준을 넘는지 확인', '휴게시간이 근로시간에 포함되는지 확인', '소규모 사업장의 근로시간 적용 여부 확인']::text[],
+  array['회사에서 매일 10시간씩 일해요.', '하루 8시간 넘게 일하면 불법인가요?', '주 52시간이 정확히 무슨 뜻이에요?', '점심시간도 근무시간에 들어가나요?', '계약서에는 하루 7시간인데 더 일하면 어떻게 되나요?', '회사에서 퇴근 후에도 계속 일을 시켜요.', '직원 4명인 회사도 주 52시간제가 적용되나요?', '알바도 하루에 8시간 넘게 일할 수 있나요?', '회사에서 대기만 하고 있어도 근로시간인가요?']::text[],
+  'published',
+  null,
+  '2026-09-05'::date,
+  '2026-09-05T00:00:00.000Z'::timestamptz
+)
+on conflict (slug)
+do update set
+  title = excluded.title,
+  summary = excluded.summary,
+  easy_explanation = excluded.easy_explanation,
+  applies_to = excluded.applies_to,
+  key_points = excluded.key_points,
+  examples = excluded.examples,
+  check_points = excluded.check_points,
+  category_id = excluded.category_id,
+  keywords = excluded.keywords,
+  intents = excluded.intents,
+  related_questions = excluded.related_questions,
+  status = excluded.status,
+  published_at = excluded.published_at,
+  last_reviewed_at = excluded.last_reviewed_at,
+  updated_at = excluded.updated_at;
+
+insert into public.knowledge (
+  title,
+  slug,
+  summary,
+  easy_explanation,
+  applies_to,
+  key_points,
+  examples,
+  check_points,
+  category_id,
+  keywords,
+  intents,
+  related_questions,
+  status,
+  published_at,
+  last_reviewed_at,
+  updated_at
+)
+values (
+  '연차휴가 기본',
+  'annual-leave-basics',
+  '상시 5명 이상 사업장에서 4주 평균 주 소정근로시간이 15시간 이상인 근로자가 1년간 80% 이상 출근했다면 원칙적으로 15일의 연차유급휴가가 발생합니다.',
+  '연차유급휴가는 일정한 요건을 충족한 근로자가 임금을 받으면서 쉴 수 있도록 법에서 보장한 휴가입니다. 흔히 1년 일하면 연차 15개가 생긴다고 말하지만 실제로는 사업장 규모, 주 소정근로시간, 계속근로기간, 출근율 등을 함께 확인해야 합니다. 또한 연차휴가와 미사용 연차수당은 같은 개념이 아닙니다. 연차휴가는 쉬는 권리이고, 미사용 연차수당은 사용하지 못한 연차에 관한 금전 보상 문제로 구분해서 이해하는 것이 좋습니다.',
+  array['회사에 1년 이상 다녔는데 연차가 몇 개인지 궁금한 경우', '회사 다니면 연차가 언제 생기는지 궁금한 경우', '결근이 있었는데 연차가 생기는지 궁금한 경우', '연차 날짜를 내가 정할 수 있는지 궁금한 경우', '회사에서 바쁘다며 연차 사용을 미루라고 하는 경우', '아르바이트나 단시간근로자도 연차가 있는지 궁금한 경우', '직원이 적은 회사에서도 연차를 받을 수 있는지 궁금한 경우']::text[],
+  '[{"title":"연차유급휴가는 무엇인가요?","body":"연차유급휴가는 법에서 정한 요건을 충족한 근로자가 일정 기간 유급으로 일을 쉬는 제도입니다. 정상적으로 사용하는 연차휴가는 단순 결근과 다릅니다."},{"title":"기본적으로 연차는 몇 일이 발생하나요?","body":"계속근로기간이 1년 이상이고 그 1년 동안 80% 이상 출근했다면 기본적으로 15일의 연차유급휴가가 발생합니다. 장기근속자는 법에서 정한 기준에 따라 가산휴가가 발생할 수 있고 총 휴가일수에는 상한이 있습니다."},{"title":"출근율 80%는 왜 중요한가요?","body":"1년 이상 근무한 근로자의 기본 15일 연차는 직전 1년의 출근율 80% 이상을 전제로 합니다. 다만 업무상 재해 휴업, 출산전후휴가, 육아휴직 등 법에서 출근한 것으로 보는 기간이 있으므로 실제 출근한 날만 단순히 세어 판단하면 정확하지 않을 수 있습니다."},{"title":"아직 1년을 못 채운 사람은 연차가 없나요?","body":"그렇지 않습니다. 계속근로기간이 1년 미만인 근로자에게는 1개월 개근 시 1일의 유급휴가가 발생하는 별도의 구조가 있습니다. 상세한 내용은 별도 Knowledge에서 다루는 영역입니다."},{"title":"연차 날짜는 회사가 마음대로 정하나요?","body":"원칙적으로 사용자는 근로자가 청구한 시기에 연차휴가를 주어야 합니다. 다만 그 시기에 휴가를 주는 것이 사업 운영에 막대한 지장이 있는 경우에는 사용자가 시기를 변경할 수 있습니다."},{"title":"아르바이트나 단시간근로자도 연차가 있나요?","body":"아르바이트라는 이름만으로 연차에서 제외되는 것은 아닙니다. 다만 4주를 평균해 1주 소정근로시간이 15시간 미만인 근로자에게는 근로기준법 제60조의 연차유급휴가가 적용되지 않습니다."},{"title":"직원이 5명보다 적은 회사에서도 연차가 발생하나요?","body":"근로기준법 제60조에 따른 법정 연차유급휴가는 상시 5명 이상 사업장을 기준으로 적용됩니다. 실제 상시근로자 수 판단이 필요한 경우 단순히 특정 날 출근한 인원만 보고 결론 내리면 안 됩니다."},{"title":"연차휴가와 연차수당은 같은 건가요?","body":"아닙니다. 연차휴가는 유급으로 쉴 수 있는 휴가 자체이고, 미사용 연차수당은 발생한 연차를 사용하지 못한 경우의 금전보상 문제입니다. 사용기간, 사용촉진 등 별도 조건이 관련될 수 있습니다."}]'::jsonb,
+  '[{"title":"상황 예시","body":"A씨는 직원 20명이 일하는 회사에서 1년을 넘겨 계속 근무하고 있고 첫 1년 동안 특별한 결근 없이 일했습니다. 회사에서는 1년이 지나면 연차 15일이 생기지만 회사가 원하는 날짜에만 사용할 수 있다고 설명했습니다. 이 경우 먼저 상시 5명 이상 사업장인지, 주 소정근로시간이 15시간 이상인지, 계속근로기간과 출근율 요건을 충족하는지 확인할 수 있습니다. 요건을 충족한다면 기본 15일 발생 구조를 확인할 수 있으며, 사용 시기는 근로자의 청구가 원칙이지만 사업 운영에 막대한 지장이 있는 경우 사용자의 시기변경권도 별도로 검토할 수 있습니다."}]'::jsonb,
+  '[{"title":"1년 다니면 누구나 무조건 15일이라고 단순화하지 마세요.","body":"사업장 규모, 주 소정근로시간, 계속근로기간과 출근율 등을 함께 확인해야 합니다."},{"title":"1년 미만 근로자도 연차가 전혀 없는 것은 아닙니다.","body":"1개월 개근에 따른 별도의 발생 구조가 있으며 상세 내용은 별도 Knowledge에서 다룹니다."},{"title":"연차와 연차수당을 구분하세요.","body":"휴가 자체의 발생·사용 문제와 미사용 휴가에 대한 금전보상은 서로 다른 문제입니다."},{"title":"근로자가 원하는 시기에 사용하는 것이 기본 원칙입니다.","body":"다만 사업 운영에 막대한 지장이 있는 경우에는 사용자가 법에서 정한 범위에서 사용 시기를 변경할 수 있습니다."},{"title":"향후 시행 예정인 연차 제도 개정과 현행 기준을 구분하세요.","body":"2027년 6월 10일부터 시행 예정인 연차 관련 개정사항은 2026년 9월 현재 아직 현행 기준이 아닙니다."}]'::jsonb,
+  (
+    select id
+    from public.categories
+    where slug = 'leave-holidays'
+  ),
+  array['연차', '연차휴가', '연차유급휴가', '연차 몇개', '연차 발생', '연차 언제 생김', '15일 연차', '회사 연차', '알바 연차', '연차 사용', '연차 거절', '연차 못 쓰게 함', '출근율 80%', '5인 미만 연차', '주15시간 연차']::text[],
+  array['연차휴가의 기본 개념 확인', '1년 근무 후 연차 발생 여부 확인', '연차가 몇 일 발생하는지 기본 구조 파악', '출근율과 연차 관계 확인', '연차 사용 시기를 누가 정하는지 확인', '단시간근로자·아르바이트의 연차 적용 여부 확인', '5인 미만 사업장의 연차 적용 여부 확인', '연차와 연차수당의 차이 확인']::text[],
+  array['회사 다니면 연차가 언제 생겨요?', '1년 일하면 연차가 무조건 15개인가요?', '회사에서 연차를 못 쓰게 하는데 가능한가요?', '제가 원하는 날에 연차 써도 되나요?', '결근을 좀 했는데 연차가 생기나요?', '알바도 연차가 있어요?', '주 10시간 정도 일하면 연차를 받을 수 있나요?', '직원 4명인 회사도 연차가 있나요?', '연차랑 연차수당은 같은 건가요?', '입사한 지 아직 1년이 안 됐는데 연차가 하나도 없나요?']::text[],
+  'published',
+  null,
+  '2026-09-05'::date,
+  '2026-09-05T00:00:00.000Z'::timestamptz
+)
+on conflict (slug)
+do update set
+  title = excluded.title,
+  summary = excluded.summary,
+  easy_explanation = excluded.easy_explanation,
+  applies_to = excluded.applies_to,
+  key_points = excluded.key_points,
+  examples = excluded.examples,
+  check_points = excluded.check_points,
+  category_id = excluded.category_id,
+  keywords = excluded.keywords,
+  intents = excluded.intents,
+  related_questions = excluded.related_questions,
+  status = excluded.status,
+  published_at = excluded.published_at,
+  last_reviewed_at = excluded.last_reviewed_at,
+  updated_at = excluded.updated_at;
+
+insert into public.knowledge (
+  title,
+  slug,
+  summary,
+  easy_explanation,
+  applies_to,
+  key_points,
+  examples,
+  check_points,
+  category_id,
+  keywords,
+  intents,
+  related_questions,
+  status,
+  published_at,
+  last_reviewed_at,
+  updated_at
+)
+values (
+  '퇴직금',
+  'severance-pay',
+  '기본적으로 1년 이상 계속 근로하고, 4주를 평균해 1주 소정근로시간이 15시간 이상인 근로자가 퇴직하면 계속근로기간 1년에 대해 30일분 이상의 평균임금을 기준으로 퇴직금을 산정합니다.',
+  '퇴직금은 일정한 요건을 충족한 근로자가 일을 그만둘 때 받게 되는 퇴직급여입니다. 흔히 회사에서 1년 일하면 퇴직금이 생긴다고 알고 있지만 실제로는 근무기간뿐 아니라 소정근로시간도 함께 확인해야 합니다. 기본적으로 계속근로기간이 1년 이상인지, 4주 평균 1주 소정근로시간이 15시간 이상인지, 실제 근로기준법상 근로자에 해당하는지를 확인합니다. 정규직뿐 아니라 계약직이나 아르바이트도 요건을 충족하면 대상이 될 수 있고 상시근로자 5명 미만 사업장도 자동 제외되는 것은 아닙니다.',
+  array['한 회사에서 1년 이상 일하고 퇴사하려는 경우', '아르바이트를 1년 넘게 했는데 퇴직금을 받을 수 있는지 궁금한 경우', '계약직도 퇴직금이 있는지 궁금한 경우', '자진퇴사해도 퇴직금이 나오는지 궁금한 경우', '주 15시간 안팎으로 근무시간이 자주 바뀐 경우', '퇴사했는데 회사가 퇴직금을 아직 지급하지 않은 경우', '퇴직금이 어떻게 계산되는지 기본 원리를 알고 싶은 경우']::text[],
+  '[{"title":"어떤 근로자가 기본적으로 퇴직금 대상인가요?","body":"기본적인 퇴직금 대상 여부를 확인할 때는 계속근로기간 1년 이상, 4주 평균 1주 소정근로시간 15시간 이상이라는 기준을 먼저 확인합니다. 근무시간이 계속 일정하지 않다면 기간별 소정근로시간을 구체적으로 확인해야 할 수 있습니다."},{"title":"계속근로기간 1년은 무엇을 뜻하나요?","body":"기본적으로 근로계약을 체결해 고용된 때부터 근로관계가 종료될 때까지 이어진 기간을 말합니다. 계약 형태만 변경되었는지 실제 근로관계가 단절되었는지에 따라 판단이 달라질 수 있습니다."},{"title":"퇴직금은 기본적으로 어떻게 산정하나요?","body":"퇴직금제도에서는 계속근로기간 1년에 대해 30일분 이상의 평균임금을 지급할 수 있도록 해야 합니다. 기본적인 구조는 30일분 평균임금과 계속근로기간을 기준으로 이해할 수 있습니다."},{"title":"평균임금은 무엇인가요?","body":"평균임금은 퇴직금 산정에서 중요한 기준으로, 기본적으로 산정 사유 발생 전 3개월 동안 지급된 임금 총액을 그 기간 총일수로 나누어 산정합니다. 단순히 마지막 월급을 30으로 나눈 금액과 같은 개념은 아닙니다."},{"title":"퇴직금은 언제까지 지급해야 하나요?","body":"근로자가 퇴직한 경우 사용자는 원칙적으로 퇴직금 지급사유가 발생한 날부터 14일 이내에 지급해야 합니다. 특별한 사정이 있다면 당사자 간 합의에 따라 지급기일을 연장할 수 있습니다."},{"title":"자진퇴사하면 퇴직금을 못 받나요?","body":"퇴직금은 기본적으로 퇴직 사유 자체보다 법에서 정한 퇴직급여 요건을 충족했는지가 중요합니다. 자진퇴사, 계약기간 만료, 권고사직, 해고라는 이유만으로 자동 제외되는 구조는 아닙니다."},{"title":"계약직이나 아르바이트도 받을 수 있나요?","body":"계약직, 아르바이트, 파트타이머라는 명칭만으로 퇴직금 적용 여부를 결정하지 않습니다. 근로자로서 계속근로기간과 소정근로시간 등의 법정 요건을 충족하는지 확인해야 합니다."}]'::jsonb,
+  '[{"title":"상황 예시","body":"A씨는 카페에서 주 20시간씩 1년 3개월 동안 아르바이트를 한 뒤 개인적인 이유로 퇴사했습니다. 사장님은 정규직도 아니고 스스로 그만뒀기 때문에 퇴직금이 없다고 말했습니다. 이 경우 근로기준법상 근로자에 해당하는지, 실제 계속근로기간이 1년 이상인지, 4주 평균 주 소정근로시간이 15시간 이상인지 등을 먼저 확인해야 합니다. 요건이 충족된다면 아르바이트라는 명칭이나 자진퇴사라는 이유만으로 자동 제외된다고 보기는 어렵습니다."}]'::jsonb,
+  '[{"title":"정확한 계속근로기간을 확인하세요.","body":"입사일과 퇴직일, 실제 근로관계의 지속 여부를 기준으로 확인해야 하며 단순히 근무 개월 수만 세는 방식은 정확하지 않을 수 있습니다."},{"title":"주 15시간 여부가 계속 바뀌었다면 단순 판단하지 마세요.","body":"일부 기간에 주 소정근로시간이 15시간 미만이었다면 계속근로기간 산입 방식이 달라질 수 있습니다."},{"title":"5인 미만 사업장도 자동 제외되지 않습니다.","body":"퇴직급여법의 적용 여부는 근로기준법의 5인 이상 사업장 기준과 동일하게 판단하지 않습니다."},{"title":"실제 지급 방식도 확인할 수 있습니다.","body":"현재 퇴직급여법은 일정한 경우 퇴직금을 개인형퇴직연금제도 계정 등으로 지급하도록 정하고 있으며 법에서 정한 예외가 있습니다."},{"title":"회사의 퇴직급여제도를 함께 확인하세요.","body":"회사가 퇴직연금제도를 운영한다면 실제 퇴직급여의 지급 구조가 이 콘텐츠에서 설명하는 퇴직금제도와 다를 수 있습니다."}]'::jsonb,
+  (
+    select id
+    from public.categories
+    where slug = 'retirement-dismissal'
+  ),
+  array['퇴직금', '퇴사 돈', '퇴사하면 받는 돈', '알바 퇴직금', '계약직 퇴직금', '1년 퇴직금', '1년 일하면 퇴직금', '주15시간 퇴직금', '5인 미만 퇴직금', '자진퇴사 퇴직금', '퇴직금 언제 나옴', '퇴직금 14일', '퇴직금 못 받음', '퇴직금 계산', '평균임금']::text[],
+  array['퇴직금 지급 대상인지 확인', '1년 근무 요건 확인', '주 15시간과 퇴직금의 관계 확인', '아르바이트·계약직의 퇴직금 여부 확인', '자진퇴사 시 퇴직금 여부 확인', '퇴직금 산정 원리 이해', '퇴직금 지급기한 확인', '퇴직금을 받지 못한 상황의 관련 정보 탐색']::text[],
+  array['1년 일하고 퇴사했는데 돈 더 받을 게 있나요?', '알바도 1년 넘게 하면 퇴직금 받아요?', '제가 스스로 그만두면 퇴직금은 못 받나요?', '주 20시간씩 일했는데 퇴직금이 있나요?', '직원 3명인 가게도 퇴직금을 줘야 하나요?', '계약직도 계약 끝나면 퇴직금 받을 수 있나요?', '퇴직금은 퇴사하고 언제까지 받아야 하나요?', '회사에서 퇴직금을 다음 달에 준다는데 괜찮나요?', '중간에 근무시간이 주 15시간보다 적었던 적이 있는데 퇴직금은 어떻게 되나요?', '퇴직금은 마지막 월급 기준으로 계산하나요?']::text[],
+  'published',
+  null,
+  '2026-09-05'::date,
+  '2026-09-05T00:00:00.000Z'::timestamptz
+)
+on conflict (slug)
+do update set
+  title = excluded.title,
+  summary = excluded.summary,
+  easy_explanation = excluded.easy_explanation,
+  applies_to = excluded.applies_to,
+  key_points = excluded.key_points,
+  examples = excluded.examples,
+  check_points = excluded.check_points,
+  category_id = excluded.category_id,
+  keywords = excluded.keywords,
+  intents = excluded.intents,
+  related_questions = excluded.related_questions,
+  status = excluded.status,
+  published_at = excluded.published_at,
+  last_reviewed_at = excluded.last_reviewed_at,
+  updated_at = excluded.updated_at;
+
+insert into public.knowledge (
+  title,
+  slug,
+  summary,
+  easy_explanation,
+  applies_to,
+  key_points,
+  examples,
+  check_points,
+  category_id,
+  keywords,
+  intents,
+  related_questions,
+  status,
+  published_at,
+  last_reviewed_at,
+  updated_at
+)
+values (
+  '해고예고',
+  'dismissal-notice',
+  '사용자가 근로자를 해고하려면 원칙적으로 적어도 30일 전에 예고해야 하고, 그렇지 않은 경우에는 30일분 이상의 통상임금을 지급해야 합니다. 다만 계속근로기간 3개월 미만 등 법에서 정한 예외가 있습니다.',
+  '회사에서 갑자기 오늘까지만 일하고 내일부터 나오지 말라는 말을 들었다면 먼저 확인해야 할 제도 중 하나가 해고예고입니다. 해고예고는 회사가 근로자를 해고할 때 어느 정도 미리 알려야 하는지에 관한 규칙입니다. 원칙적으로 적어도 30일 전에 예고하거나, 30일 전에 예고하지 않았다면 30일분 이상의 통상임금을 지급해야 합니다. 하지만 해고예고와 해고 자체의 정당성은 서로 다른 문제입니다. 30일 전에 알렸다고 모든 해고가 자동으로 정당해지는 것도 아니고, 예고절차에 문제가 있었다는 사실만으로 부당해고 여부가 자동 결정되는 것도 아닙니다.',
+  array['회사에서 갑자기 내일부터 나오지 말라고 한 경우', '며칠 뒤까지만 일하고 그만두라는 통보를 받은 경우', '해고예고수당이라는 말을 처음 들은 경우', '30일보다 짧게 남겨두고 해고 통보를 받은 경우', '수습기간이나 입사 초기에 해고 통보를 받은 경우', '5인 미만 사업장에서 해고된 경우', '해고예고수당과 부당해고가 같은 것인지 궁금한 경우']::text[],
+  '[{"title":"해고예고란 무엇인가요?","body":"해고예고는 사용자가 근로자의 의사와 관계없이 근로관계를 종료하는 해고를 할 때 근로자가 갑작스럽게 직장을 잃는 상황에 대비할 시간을 주기 위한 제도입니다."},{"title":"해고예고 기간은 며칠인가요?","body":"기본 예고기간은 적어도 30일입니다. 법정 예외가 없다면 해고하려는 시점과 실제 통보 시점을 기준으로 30일 이상의 예고기간이 확보되었는지 확인할 수 있습니다."},{"title":"해고예고수당은 무엇인가요?","body":"사용자가 법에서 정한 30일의 해고예고를 하지 않은 경우 지급하는 것이 일반적으로 말하는 해고예고수당입니다. 기준은 30일분 이상의 통상임금입니다."},{"title":"모든 근로자에게 항상 적용되나요?","body":"그렇지 않습니다. 계속 근로한 기간이 3개월 미만인 경우, 천재·사변 등으로 사업을 계속하는 것이 불가능한 경우, 근로자가 고의로 사업에 막대한 지장을 주거나 재산상 손해를 끼친 경우 중 법에서 정한 사유 등에 대해서는 예외가 적용될 수 있습니다."},{"title":"3개월을 못 채웠다면 당일 해고도 항상 정당한가요?","body":"그렇게 이해하면 안 됩니다. 계속근로기간 3개월 미만이라는 기준은 해고예고 의무의 예외와 관련된 내용입니다. 해고 자체의 정당성 여부와는 별개의 문제입니다."},{"title":"5인 미만 사업장에도 해고예고가 적용되나요?","body":"해고예고 규정은 상시 5명 미만 사업장에도 적용됩니다. 다만 일반적인 부당해고 제한이나 노동위원회 구제제도의 적용범위와는 차이가 있으므로 구분해서 확인해야 합니다."},{"title":"30일 전에 통보하면 그 해고는 정당한가요?","body":"아닙니다. 해고예고는 언제 알려야 하는지를 규정하는 제도이고, 해고의 정당성은 사용자가 근로자를 해고할 정당한 이유와 적법한 절차가 있는지를 다루는 별도의 문제입니다."},{"title":"해고예고와 부당해고는 무엇이 다른가요?","body":"해고예고는 해고를 얼마나 미리 알려야 했는지에 관한 문제이고, 부당해고는 해고 자체에 정당한 이유와 적법한 절차가 있었는지에 관한 문제입니다. 부당해고의 구체적인 판단과 구제절차는 별도 Knowledge의 영역입니다."}]'::jsonb,
+  '[{"title":"상황 예시","body":"A씨는 한 회사에서 8개월 동안 근무했습니다. 어느 날 팀장이 회사 사정이 어렵다며 오늘까지만 일하고 내일부터 출근하지 않아도 된다고 통보했습니다. 이 경우 A씨가 다른 법정 예외에 해당하지 않는다면 회사가 30일 전에 해고를 예고했는지, 그렇지 않았다면 30일분 이상의 통상임금 지급 문제가 있는지를 확인할 수 있습니다. 다만 이 사실만으로 해고 자체가 부당한지 또는 정당한지를 바로 결론 내리는 것은 적절하지 않습니다."}]'::jsonb,
+  '[{"title":"해고예고와 해고 자체의 정당성을 구분하세요.","body":"30일 예고는 해고의 정당성을 자동으로 만들어주는 조건이 아닙니다."},{"title":"3개월 미만은 해고예고 규정의 예외입니다.","body":"3개월 미만이면 어떤 이유로든 해고할 수 있다는 의미로 확대해서 이해하면 안 됩니다."},{"title":"5인 미만 사업장에도 해고예고는 적용됩니다.","body":"다만 부당해고 제한과 노동위원회 구제제도의 적용범위는 별도로 확인해야 합니다."},{"title":"근로자 잘못이 있다고 모든 경우 예고수당이 없어지는 것은 아닙니다.","body":"법과 시행규칙에서 정한 구체적인 예외 사유에 실제로 해당하는지를 확인해야 합니다."},{"title":"해고예고와 서면통지도 구분하세요.","body":"해고예고의 기간 문제와 해고사유·해고시기의 서면통지 문제는 서로 다른 규정입니다."},{"title":"향후 시행 예정 법령에서도 현재의 제26조 구조가 유지되는지 확인했습니다.","body":"2026년 9월 현재 확인된 향후 시행 예정 근로기준법에서도 제26조의 30일 예고와 예외 구조는 현행과 동일하게 확인되었습니다."}]'::jsonb,
+  (
+    select id
+    from public.categories
+    where slug = 'retirement-dismissal'
+  ),
+  array['해고예고', '해고예고수당', '갑자기 해고', '갑자기 잘림', '당일 해고', '오늘 해고', '내일부터 나오지 말라고 함', '사장이 나오지 말래요', '해고 30일', '30일 전 통보', '해고수당', '3개월 미만 해고', '수습기간 해고', '5인 미만 해고예고']::text[],
+  array['갑작스러운 해고 통보에 해고예고 규정이 적용되는지 확인', '해고예고 기간 확인', '해고예고수당 발생 여부 확인', '3개월 미만 근로자의 해고예고 예외 확인', '5인 미만 사업장의 해고예고 적용 여부 확인', '해고예고와 부당해고의 차이 이해', '30일 전에 통보받지 못한 상황에서 관련 정보 확인']::text[],
+  array['사장이 오늘부터 나오지 말래요.', '갑자기 잘렸는데 미리 말 안 해줘도 되나요?', '회사에서 일주일 뒤까지만 나오라고 했어요.', '해고는 무조건 30일 전에 말해줘야 하나요?', '입사한 지 두 달 됐는데 갑자기 해고됐어요.', '5인 미만 가게도 해고예고수당을 받을 수 있나요?', '회사에서 10일 전에 말했으면 나머지 20일치만 주면 되나요?', '해고예고수당 받으면 부당해고 신고는 못 하나요?', '30일 전에 통보하면 회사가 이유 없이 해고해도 되나요?', '무단지각을 했다고 당일 해고하면서 예고수당도 없다고 하는데 맞나요?']::text[],
+  'published',
+  null,
+  '2026-09-05'::date,
+  '2026-09-05T00:00:00.000Z'::timestamptz
+)
+on conflict (slug)
+do update set
+  title = excluded.title,
+  summary = excluded.summary,
+  easy_explanation = excluded.easy_explanation,
+  applies_to = excluded.applies_to,
+  key_points = excluded.key_points,
+  examples = excluded.examples,
+  check_points = excluded.check_points,
+  category_id = excluded.category_id,
+  keywords = excluded.keywords,
+  intents = excluded.intents,
+  related_questions = excluded.related_questions,
+  status = excluded.status,
+  published_at = excluded.published_at,
+  last_reviewed_at = excluded.last_reviewed_at,
+  updated_at = excluded.updated_at;
+
+insert into public.knowledge (
+  title,
+  slug,
+  summary,
+  easy_explanation,
+  applies_to,
+  key_points,
+  examples,
+  check_points,
+  category_id,
+  keywords,
+  intents,
+  related_questions,
+  status,
+  published_at,
+  last_reviewed_at,
+  updated_at
+)
+values (
+  '임금체불 대응',
+  'wage-arrears-response',
+  '정해진 급여 지급일이 지났는데 임금의 전부 또는 일부를 받지 못했거나, 퇴직 후 지급받아야 할 임금·퇴직금 등이 법정기한 안에 지급되지 않았다면 임금체불 관련 내용을 확인하고 고용노동부의 공식 진정 절차를 알아볼 수 있습니다.',
+  '임금체불은 월급을 한 푼도 받지 못한 경우만을 뜻하지 않습니다. 재직 중 정해진 지급일에 임금의 전부 또는 일부가 지급되지 않거나, 퇴직 후 지급받아야 할 임금·퇴직금·각종 수당 등이 정해진 기한까지 지급되지 않은 경우도 체불 문제와 연결될 수 있습니다. 이 콘텐츠의 목적은 정확히 얼마를 받을 수 있는지를 계산하는 것이 아니라, 받아야 할 금품이 지급되지 않았을 때 어떤 자료를 확인하고 어떤 공식 절차를 알아볼 수 있는지를 설명하는 것입니다.',
+  array['월급날이 지났는데 급여가 들어오지 않은 경우', '회사가 급여의 일부만 지급한 경우', '아르바이트비를 받지 못한 경우', '연장·야간·휴일근로수당이 지급되지 않은 경우', '퇴사 후 마지막 월급을 아직 받지 못한 경우', '퇴직금을 지급받지 못한 경우', '최저임금보다 낮게 지급받은 것으로 의심되는 경우', '회사가 계속 다음 달에 주겠다고만 하는 경우', '고용노동부에 문제를 제기하려면 무엇을 준비해야 하는지 궁금한 경우']::text[],
+  '[{"title":"임금은 언제 지급해야 하나요?","body":"재직 중 임금은 원칙적으로 매월 1회 이상 일정한 날짜를 정해 지급해야 합니다. 정해진 급여일이 지났는데 임금 전부 또는 일부가 지급되지 않았다면 체불 여부를 확인할 필요가 있습니다."},{"title":"퇴사하면 마지막 월급도 다음 월급날까지 기다려야 하나요?","body":"퇴직한 경우에는 별도의 금품청산 원칙이 적용됩니다. 사용자는 원칙적으로 지급사유가 발생한 날부터 14일 이내에 임금, 보상금 등 지급해야 할 금품을 정산해야 하며 특별한 사정이 있는 경우 당사자 합의로 지급기일을 연장할 수 있습니다."},{"title":"퇴직금을 못 받은 것도 임금체불 대응과 연결되나요?","body":"퇴직금이 실제로 발생하는지와 금액은 퇴직금 Knowledge에서 확인하고, 발생한 퇴직금이 법정기한 내 지급되지 않은 경우에는 임금체불 관련 공식 대응 절차와 연결해 확인할 수 있습니다."},{"title":"최저임금보다 적게 받은 경우도 연결될 수 있나요?","body":"최저임금 적용 대상 근로자가 법정 최저임금보다 낮은 임금을 지급받았다면 그 차액의 지급 문제가 생길 수 있습니다. 다만 실제 위반 여부와 차액은 근로시간, 임금 구성, 산입범위 등을 확인한 뒤 판단해야 합니다."},{"title":"어떤 자료를 확보해두면 좋나요?","body":"근로계약서, 급여명세서, 급여 입금내역, 출퇴근이나 근로시간을 확인할 수 있는 자료, 회사와 주고받은 문자·메신저·이메일 등 자신이 언제 얼마를 받기로 했고 실제 얼마를 받았는지를 확인할 수 있는 자료를 정리해두면 사실관계 확인에 도움이 됩니다."},{"title":"고용노동부에는 어떻게 문제를 제기하나요?","body":"대표적인 절차는 진정입니다. 노동포털을 이용한 온라인 접수나 근무했던 사업장 소재지 관할 지방고용노동관서를 통한 접수 방법을 확인할 수 있으며 고용노동 관련 전화상담은 1350을 이용할 수 있습니다."},{"title":"진정을 넣으면 바로 돈을 받을 수 있나요?","body":"진정을 제기했다는 이유만으로 자동 지급되는 것은 아닙니다. 담당 근로감독관이 신고인과 사업주 등을 대상으로 사실관계를 확인하고 체불 등 법 위반이 확인되면 시정지시 등의 절차가 진행될 수 있습니다."},{"title":"진정과 고소는 같은 건가요?","body":"완전히 같지는 않습니다. 노동포털은 진정을 체불된 임금을 지급받기 위한 조치를 요구하는 절차로, 고소를 사용자의 노동관계법 위반에 대한 처벌을 요구하는 절차로 구분해 안내합니다."}]'::jsonb,
+  '[{"title":"상황 예시","body":"A씨의 급여일은 매월 25일입니다. 그런데 급여일이 지나도 회사에서 자금 사정이 어렵다며 다음 달에 같이 지급하겠다는 말만 하고 급여를 지급하지 않았습니다. 이 경우 약정된 급여 지급일, 받기로 한 임금액, 실제 입금내역, 회사가 지급을 미루겠다고 알린 내용을 확인해두는 것이 좋습니다. 회사가 계속 지급하지 않는다면 노동포털이나 사업장 소재지 관할 지방고용노동관서를 통한 임금체불 관련 진정 절차를 확인할 수 있습니다."}]'::jsonb,
+  '[{"title":"임금을 일부 받았다고 체불 문제가 없는 것은 아닙니다.","body":"정해진 지급일에 받아야 할 임금 중 일부가 지급되지 않은 경우에도 확인 대상이 될 수 있습니다."},{"title":"퇴사 전과 퇴사 후의 지급 기준을 구분하세요.","body":"재직 중에는 정해진 정기 지급일이 중요하고 퇴직 후에는 원칙적으로 지급사유 발생 후 14일이라는 금품청산 기준이 관련됩니다."},{"title":"퇴직금 대상 여부와 체불 대응을 혼동하지 마세요.","body":"퇴직금이 발생하는지는 별도 요건을 확인해야 하고, 발생한 퇴직금이 지급되지 않았을 때 이 콘텐츠의 대응 흐름이 연결됩니다."},{"title":"최저임금 미달 여부도 정확한 기준을 먼저 확인하세요.","body":"지급액이 낮아 보인다는 사실만으로 체불 차액을 임의로 확정해서는 안 됩니다."},{"title":"현재 시행 기준과 향후 시행 예정 기준을 구분하세요.","body":"2026년 9월 현재 사건에는 현재 시행 중인 근로기준법을 기준으로 확인해야 합니다."}]'::jsonb,
+  (
+    select id
+    from public.categories
+    where slug = 'workplace-protection'
+  ),
+  array['임금체불', '월급 안 줌', '월급 밀림', '급여 미지급', '월급 일부만 줌', '알바비 안 줌', '알바 월급 못 받음', '퇴사 월급', '퇴직금 안 줌', '급여일 지남', '노동청 신고', '임금체불 신고', '노동부 진정', '급여 체불', '최저임금 차액']::text[],
+  array['정해진 급여일이 지났는데 임금이 지급되지 않은 상황 대응', '임금 일부가 미지급된 상황 확인', '퇴직 후 임금이 지급되지 않은 상황 대응', '퇴직금 미지급 시 공식 절차 확인', '최저임금 미달 차액 문제와 체불의 관계 확인', '임금체불 진정 방법 확인', '진정 전에 준비할 자료 확인', '온라인·관할 지방고용노동관서 신고 방법 확인']::text[],
+  array['월급날이 지났는데 아직 돈이 안 들어왔어요.', '회사에서 월급의 반만 주고 나머지는 다음 달에 준대요.', '알바비를 계속 안 주는데 어디에 신고해야 하나요?', '퇴사했는데 월급이랑 퇴직금을 안 줘요.', '회사가 돈이 없다고 월급을 계속 미루는데 어떻게 해야 하나요?', '최저시급보다 적게 받았는데 그 차액도 받을 수 있나요?', '노동청에 월급 안 준 걸 신고하려면 뭘 준비해야 해요?', '임금체불 신고를 인터넷으로도 할 수 있나요?', '계약서가 없어도 임금체불 신고를 할 수 있나요?', '월급을 늦게 주기만 해도 임금체불인가요?']::text[],
+  'published',
+  null,
+  '2026-09-05'::date,
+  '2026-09-05T00:00:00.000Z'::timestamptz
+)
+on conflict (slug)
+do update set
+  title = excluded.title,
+  summary = excluded.summary,
+  easy_explanation = excluded.easy_explanation,
+  applies_to = excluded.applies_to,
+  key_points = excluded.key_points,
+  examples = excluded.examples,
+  check_points = excluded.check_points,
+  category_id = excluded.category_id,
+  keywords = excluded.keywords,
+  intents = excluded.intents,
+  related_questions = excluded.related_questions,
+  status = excluded.status,
+  published_at = excluded.published_at,
+  last_reviewed_at = excluded.last_reviewed_at,
+  updated_at = excluded.updated_at;
+
+insert into public.knowledge (
+  title,
+  slug,
+  summary,
+  easy_explanation,
+  applies_to,
+  key_points,
+  examples,
+  check_points,
+  category_id,
+  keywords,
+  intents,
+  related_questions,
+  status,
+  published_at,
+  last_reviewed_at,
+  updated_at
+)
+values (
+  '직장 내 괴롭힘',
+  'workplace-harassment',
+  '직장 내 괴롭힘은 단순히 불쾌하거나 갈등이 있었다는 이유만으로 결정되는 것이 아니라, 직장에서의 지위·관계 등의 우위를 이용했는지, 업무상 적정범위를 넘었는지, 그 결과 신체적·정신적 고통이나 근무환경 악화가 있었는지를 구체적인 상황과 함께 확인해야 합니다.',
+  '상사에게 심한 말을 들었거나 동료들에게 따돌림을 당했다고 해서 사이트가 곧바로 직장 내 괴롭힘이라고 확정해서는 안 됩니다. 현행 근로기준법은 직장 내 괴롭힘을 판단할 때 직장에서의 지위 또는 관계 등의 우위를 이용했는지, 업무상 적정범위를 넘었는지, 그 결과 신체적·정신적 고통을 주거나 근무환경을 악화시켰는지를 함께 봅니다. 같은 말이나 행동이라도 당사자의 관계, 업무상 필요성, 반복 여부, 상황과 방식 등에 따라 판단이 달라질 수 있으므로 이 콘텐츠는 사용자의 상황을 확정 판정하는 대신 어떤 요소를 확인해야 하는지를 안내합니다.',
+  array['상사가 반복적으로 욕설이나 모욕적인 말을 하는 경우', '여러 사람 앞에서 지속적으로 망신을 주는 경우', '특정 직원만 의도적으로 업무에서 배제하는 경우', '동료들이 집단적으로 한 사람을 따돌리는 경우', '한 사람에게만 지나치게 많은 업무를 반복적으로 몰아주는 경우', '업무와 관계없는 개인적인 일을 지속적으로 시키는 경우', '회사에 괴롭힘을 신고했는데 제대로 조사하지 않는 경우', '신고 이후 인사상 불이익이나 해고가 걱정되는 경우']::text[],
+  '[{"title":"직장 내 괴롭힘은 무엇인가요?","body":"사용자 또는 근로자가 직장에서의 지위 또는 관계 등의 우위를 이용해 업무상 적정범위를 넘어 다른 근로자에게 신체적·정신적 고통을 주거나 근무환경을 악화시키는 행위를 직장 내 괴롭힘으로 규정합니다."},{"title":"지위 또는 관계의 우위는 상사에게만 해당하나요?","body":"꼭 직급이 높은 상사만을 의미하지는 않습니다. 직급 외에도 수적 관계, 연령, 근속연수, 업무능력이나 전문성, 조직 내 영향력 등 사실상 상대방이 저항하기 어려운 관계인지가 고려될 수 있습니다."},{"title":"업무상 적정범위를 넘는다는 것은 무슨 뜻인가요?","body":"업무지시나 평가, 실수에 대한 지적 자체가 모두 괴롭힘은 아닙니다. 해당 행위에 업무상 필요성이 있는지, 필요성이 있더라도 행위 방식이나 정도가 사회통념상 상당한지를 함께 확인할 필요가 있습니다."},{"title":"어떤 상황들이 문제가 될 수 있나요?","body":"반복적인 욕설·모욕·비하, 공개적인 인격적 망신, 이유 없는 업무배제, 특정인에 대한 과도한 업무부여, 업무와 무관한 사적 심부름 강요, 일을 주지 않고 장기간 방치하는 행위 등은 구체적인 사실관계에 따라 판단요소를 확인해볼 수 있습니다."},{"title":"상황을 겪고 있다면 무엇을 기록해둘 수 있나요?","body":"언제, 어디에서, 누가, 어떤 말이나 행동을 했는지, 같은 일이 반복되었는지, 당시 함께 있던 사람이 있었는지 등을 정리할 수 있습니다. 이미 확보한 문자·메신저, 이메일, 업무지시 자료, 적법하게 확보한 녹음자료, 내부 신고기록 등도 사실 확인에 활용될 수 있습니다."},{"title":"회사에 신고하면 회사는 무엇을 해야 하나요?","body":"사용자가 신고를 받거나 직장 내 괴롭힘 발생 사실을 알게 된 경우에는 지체 없이 당사자 등을 대상으로 객관적인 사실 확인 조사를 실시해야 합니다. 조사 중 필요한 보호조치나 괴롭힘 확인 후 피해근로자와 행위자에 대한 적절한 조치 의무도 규정되어 있습니다."},{"title":"신고했다는 이유로 불이익을 받아도 되나요?","body":"사용자가 직장 내 괴롭힘을 신고한 근로자나 피해근로자 등에게 해고나 그 밖의 불리한 처우를 하는 것은 법에서 금지하고 있습니다. 다만 실제 어떤 조치가 불리한 처우에 해당하는지는 구체적인 사정을 확인해야 합니다."},{"title":"회사가 조사를 하지 않는다면 어떻게 하나요?","body":"사용자의 객관적인 조사·보호·조치 의무 이행에 문제가 있다고 생각된다면 사업장 소재지 관할 지방고용노동관서를 통한 진정 절차를 확인할 수 있습니다."},{"title":"작은 회사에도 같은 법이 적용되나요?","body":"현행 근로기준법상 직장 내 괴롭힘 제도는 원칙적으로 상시 5명 이상 사업장을 기준으로 확인해야 합니다. 상시 5명 미만 사업장에는 해당 조항이 동일하게 적용된다고 단정해서는 안 됩니다."}]'::jsonb,
+  '[{"title":"상황 예시","body":"A씨의 팀장은 업무회의 때마다 A씨의 실수를 지적하면서 여러 동료 앞에서 이 정도도 못하면 왜 회사에 다니냐는 말을 반복했습니다. 다른 팀원에게는 하지 않는 개인적인 심부름도 지속적으로 시켰고, A씨가 거절하자 업무를 과도하게 배정하기 시작했습니다. 이 상황만 보고 직장 내 괴롭힘이라고 확정하는 대신 팀장이라는 지위나 관계의 우위가 있었는지, 공개적인 모욕이나 개인 심부름·과도한 업무배정의 방식이 업무상 적정범위를 벗어났는지, 반복성과 정도로 인해 정신적 고통이나 근무환경 악화가 있었는지 등을 구체적인 사실관계와 함께 확인해야 합니다."}]'::jsonb,
+  '[{"title":"불쾌한 행동이 모두 직장 내 괴롭힘인 것은 아닙니다.","body":"우위, 업무상 적정범위 초과, 신체적·정신적 고통이나 근무환경 악화 등의 요소를 구체적인 사정과 함께 확인해야 합니다."},{"title":"상사만 행위자가 될 수 있는 것은 아닙니다.","body":"직급 외의 관계상 우위가 존재할 수 있으므로 동료나 집단과의 관계도 구체적으로 확인할 수 있습니다."},{"title":"정당한 업무지시와 괴롭힘을 구분해야 합니다.","body":"업무상 필요성이 있는지, 필요성이 있더라도 방식과 정도가 적정한지를 함께 살펴야 합니다."},{"title":"객관적인 조사 절차 자체가 중요합니다.","body":"회사가 신고를 받거나 괴롭힘 발생 사실을 알게 되었다면 법에서 정한 조사 의무가 관련될 수 있습니다."},{"title":"신고자와 피해자에 대한 불리한 처우는 별도로 금지됩니다.","body":"신고를 이유로 한 해고나 그 밖의 불리한 처우 문제는 직장 내 괴롭힘 판단과 별도로 확인할 수 있습니다."},{"title":"상시 5명 미만 사업장은 적용 여부를 별도로 확인하세요.","body":"현행 근로기준법상 직장 내 괴롭힘 조항이 상시 5명 미만 사업장에 동일하게 적용된다고 단정해서는 안 됩니다."},{"title":"최신 공식 실무안내도 함께 확인할 수 있습니다.","body":"2026년 7월 고용노동부가 배포한 직장 내 괴롭힘 예방·대응 매뉴얼은 2026년 9월 현재 확인한 최신 공식 실무 안내자료입니다."}]'::jsonb,
+  (
+    select id
+    from public.categories
+    where slug = 'workplace-protection'
+  ),
+  array['직장 내 괴롭힘', '직장 괴롭힘', '회사 갑질', '직장 갑질', '상사가 욕함', '직장 폭언', '상사 폭언', '회사 따돌림', '직장 왕따', '공개적으로 망신', '상사가 무시함', '업무 몰아주기', '일 안 줌', '퇴사 압박', '직장내괴롭힘 신고', '괴롭힘 증거']::text[],
+  array['직장에서 겪은 행동이 직장 내 괴롭힘 판단대상인지 확인', '직장 내 괴롭힘의 법적 판단요소 이해', '상사의 욕설·공개적 모욕 상황 확인', '집단 따돌림·업무배제 상황 확인', '과도한 업무부여가 괴롭힘이 될 수 있는지 확인', '괴롭힘 관련 기록·자료 확인', '회사 신고 후 사용자의 조사·보호조치 의무 확인', '신고 후 불이익 가능성과 법적 보호 확인', '외부 진정 절차 확인']::text[],
+  array['팀장이 사람들 앞에서 계속 저를 무시해요.', '상사가 욕하는 것도 직장 내 괴롭힘인가요?', '회사에서 저한테만 일을 몰아줘요.', '동료들이 저만 빼고 계속 따돌리는데 이것도 괴롭힘인가요?', '상사가 계속 퇴사하라고 압박해요.', '직장 내 괴롭힘은 어떤 증거를 남겨야 하나요?', '회사에 괴롭힘 신고했는데 아무 조사도 안 해줘요.', '괴롭힘 신고했다가 회사에서 불이익을 주면 어떡하나요?', '같은 직급 동료가 괴롭혀도 직장 내 괴롭힘이 될 수 있나요?', '기분 나쁜 말을 한 번 들은 것도 직장 내 괴롭힘인가요?']::text[],
+  'published',
+  null,
+  '2026-09-05'::date,
+  '2026-09-05T00:00:00.000Z'::timestamptz
+)
+on conflict (slug)
+do update set
+  title = excluded.title,
+  summary = excluded.summary,
+  easy_explanation = excluded.easy_explanation,
+  applies_to = excluded.applies_to,
+  key_points = excluded.key_points,
+  examples = excluded.examples,
+  check_points = excluded.check_points,
+  category_id = excluded.category_id,
+  keywords = excluded.keywords,
+  intents = excluded.intents,
+  related_questions = excluded.related_questions,
+  status = excluded.status,
+  published_at = excluded.published_at,
+  last_reviewed_at = excluded.last_reviewed_at,
+  updated_at = excluded.updated_at;
+
+-- =========================================================
+-- Knowledge Guides
+-- =========================================================
+
+insert into public.knowledge_guides (
+  knowledge_id,
+  guide_id,
+  is_primary,
+  display_order
+)
+select
+  k.id,
+  g.id,
+  true,
+  1
+from
+  public.knowledge k,
+  public.guide_situations g
+where
+  k.slug = 'employment-contract'
+  and g.slug = 'start-work'
+on conflict (knowledge_id, guide_id)
+do update set
+  is_primary = excluded.is_primary,
+  display_order = excluded.display_order;
+
+insert into public.knowledge_guides (
+  knowledge_id,
+  guide_id,
+  is_primary,
+  display_order
+)
+select
+  k.id,
+  g.id,
+  false,
+  4
+from
+  public.knowledge k,
+  public.guide_situations g
+where
+  k.slug = 'employment-contract'
+  and g.slug = 'problem'
+on conflict (knowledge_id, guide_id)
+do update set
+  is_primary = excluded.is_primary,
+  display_order = excluded.display_order;
+
+insert into public.knowledge_guides (
+  knowledge_id,
+  guide_id,
+  is_primary,
+  display_order
+)
+select
+  k.id,
+  g.id,
+  true,
+  1
+from
+  public.knowledge k,
+  public.guide_situations g
+where
+  k.slug = 'minimum-wage'
+  and g.slug = 'pay'
+on conflict (knowledge_id, guide_id)
+do update set
+  is_primary = excluded.is_primary,
+  display_order = excluded.display_order;
+
+insert into public.knowledge_guides (
+  knowledge_id,
+  guide_id,
+  is_primary,
+  display_order
+)
+select
+  k.id,
+  g.id,
+  false,
+  2
+from
+  public.knowledge k,
+  public.guide_situations g
+where
+  k.slug = 'minimum-wage'
+  and g.slug = 'start-work'
+on conflict (knowledge_id, guide_id)
+do update set
+  is_primary = excluded.is_primary,
+  display_order = excluded.display_order;
+
+insert into public.knowledge_guides (
+  knowledge_id,
+  guide_id,
+  is_primary,
+  display_order
+)
+select
+  k.id,
+  g.id,
+  true,
+  1
+from
+  public.knowledge k,
+  public.guide_situations g
+where
+  k.slug = 'statutory-working-hours'
+  and g.slug = 'work-condition'
+on conflict (knowledge_id, guide_id)
+do update set
+  is_primary = excluded.is_primary,
+  display_order = excluded.display_order;
+
+insert into public.knowledge_guides (
+  knowledge_id,
+  guide_id,
+  is_primary,
+  display_order
+)
+select
+  k.id,
+  g.id,
+  false,
+  3
+from
+  public.knowledge k,
+  public.guide_situations g
+where
+  k.slug = 'statutory-working-hours'
+  and g.slug = 'pay'
+on conflict (knowledge_id, guide_id)
+do update set
+  is_primary = excluded.is_primary,
+  display_order = excluded.display_order;
+
+insert into public.knowledge_guides (
+  knowledge_id,
+  guide_id,
+  is_primary,
+  display_order
+)
+select
+  k.id,
+  g.id,
+  true,
+  2
+from
+  public.knowledge k,
+  public.guide_situations g
+where
+  k.slug = 'annual-leave-basics'
+  and g.slug = 'work-condition'
+on conflict (knowledge_id, guide_id)
+do update set
+  is_primary = excluded.is_primary,
+  display_order = excluded.display_order;
+
+insert into public.knowledge_guides (
+  knowledge_id,
+  guide_id,
+  is_primary,
+  display_order
+)
+select
+  k.id,
+  g.id,
+  false,
+  3
+from
+  public.knowledge k,
+  public.guide_situations g
+where
+  k.slug = 'annual-leave-basics'
+  and g.slug = 'start-work'
+on conflict (knowledge_id, guide_id)
+do update set
+  is_primary = excluded.is_primary,
+  display_order = excluded.display_order;
+
+insert into public.knowledge_guides (
+  knowledge_id,
+  guide_id,
+  is_primary,
+  display_order
+)
+select
+  k.id,
+  g.id,
+  true,
+  1
+from
+  public.knowledge k,
+  public.guide_situations g
+where
+  k.slug = 'severance-pay'
+  and g.slug = 'leave-work'
+on conflict (knowledge_id, guide_id)
+do update set
+  is_primary = excluded.is_primary,
+  display_order = excluded.display_order;
+
+insert into public.knowledge_guides (
+  knowledge_id,
+  guide_id,
+  is_primary,
+  display_order
+)
+select
+  k.id,
+  g.id,
+  false,
+  4
+from
+  public.knowledge k,
+  public.guide_situations g
+where
+  k.slug = 'severance-pay'
+  and g.slug = 'pay'
+on conflict (knowledge_id, guide_id)
+do update set
+  is_primary = excluded.is_primary,
+  display_order = excluded.display_order;
+
+insert into public.knowledge_guides (
+  knowledge_id,
+  guide_id,
+  is_primary,
+  display_order
+)
+select
+  k.id,
+  g.id,
+  true,
+  1
+from
+  public.knowledge k,
+  public.guide_situations g
+where
+  k.slug = 'dismissal-notice'
+  and g.slug = 'problem'
+on conflict (knowledge_id, guide_id)
+do update set
+  is_primary = excluded.is_primary,
+  display_order = excluded.display_order;
+
+insert into public.knowledge_guides (
+  knowledge_id,
+  guide_id,
+  is_primary,
+  display_order
+)
+select
+  k.id,
+  g.id,
+  false,
+  2
+from
+  public.knowledge k,
+  public.guide_situations g
+where
+  k.slug = 'dismissal-notice'
+  and g.slug = 'leave-work'
+on conflict (knowledge_id, guide_id)
+do update set
+  is_primary = excluded.is_primary,
+  display_order = excluded.display_order;
+
+insert into public.knowledge_guides (
+  knowledge_id,
+  guide_id,
+  is_primary,
+  display_order
+)
+select
+  k.id,
+  g.id,
+  true,
+  2
+from
+  public.knowledge k,
+  public.guide_situations g
+where
+  k.slug = 'wage-arrears-response'
+  and g.slug = 'problem'
+on conflict (knowledge_id, guide_id)
+do update set
+  is_primary = excluded.is_primary,
+  display_order = excluded.display_order;
+
+insert into public.knowledge_guides (
+  knowledge_id,
+  guide_id,
+  is_primary,
+  display_order
+)
+select
+  k.id,
+  g.id,
+  false,
+  2
+from
+  public.knowledge k,
+  public.guide_situations g
+where
+  k.slug = 'wage-arrears-response'
+  and g.slug = 'pay'
+on conflict (knowledge_id, guide_id)
+do update set
+  is_primary = excluded.is_primary,
+  display_order = excluded.display_order;
+
+insert into public.knowledge_guides (
+  knowledge_id,
+  guide_id,
+  is_primary,
+  display_order
+)
+select
+  k.id,
+  g.id,
+  false,
+  3
+from
+  public.knowledge k,
+  public.guide_situations g
+where
+  k.slug = 'wage-arrears-response'
+  and g.slug = 'leave-work'
+on conflict (knowledge_id, guide_id)
+do update set
+  is_primary = excluded.is_primary,
+  display_order = excluded.display_order;
+
+insert into public.knowledge_guides (
+  knowledge_id,
+  guide_id,
+  is_primary,
+  display_order
+)
+select
+  k.id,
+  g.id,
+  true,
+  3
+from
+  public.knowledge k,
+  public.guide_situations g
+where
+  k.slug = 'workplace-harassment'
+  and g.slug = 'problem'
+on conflict (knowledge_id, guide_id)
+do update set
+  is_primary = excluded.is_primary,
+  display_order = excluded.display_order;
+
+-- =========================================================
+-- Knowledge Sources
+-- =========================================================
+
+insert into public.knowledge_sources (
+  knowledge_id,
+  source_id,
+  role,
+  note,
+  display_order
+)
+select
+  k.id,
+  s.id,
+  'legal_basis',
+  '제17조, 제114조',
+  1
+from
+  public.knowledge k,
+  public.sources s
+where
+  k.slug = 'employment-contract'
+  and s.organization = '법제처 국가법령정보센터'
+  and s.title = '근로기준법'
+on conflict (knowledge_id, source_id)
+do update set
+  role = excluded.role,
+  note = excluded.note,
+  display_order = excluded.display_order;
+
+insert into public.knowledge_sources (
+  knowledge_id,
+  source_id,
+  role,
+  note,
+  display_order
+)
+select
+  k.id,
+  s.id,
+  'legal_basis',
+  '제8조',
+  2
+from
+  public.knowledge k,
+  public.sources s
+where
+  k.slug = 'employment-contract'
+  and s.organization = '법제처 국가법령정보센터'
+  and s.title = '근로기준법 시행령'
+on conflict (knowledge_id, source_id)
+do update set
+  role = excluded.role,
+  note = excluded.note,
+  display_order = excluded.display_order;
+
+insert into public.knowledge_sources (
+  knowledge_id,
+  source_id,
+  role,
+  note,
+  display_order
+)
+select
+  k.id,
+  s.id,
+  'legal_basis',
+  '제17조, 제24조',
+  3
+from
+  public.knowledge k,
+  public.sources s
+where
+  k.slug = 'employment-contract'
+  and s.organization = '법제처 국가법령정보센터'
+  and s.title = '기간제 및 단시간근로자 보호 등에 관한 법률'
+on conflict (knowledge_id, source_id)
+do update set
+  role = excluded.role,
+  note = excluded.note,
+  display_order = excluded.display_order;
+
+insert into public.knowledge_sources (
+  knowledge_id,
+  source_id,
+  role,
+  note,
+  display_order
+)
+select
+  k.id,
+  s.id,
+  'main_reference',
+  null,
+  4
+from
+  public.knowledge k,
+  public.sources s
+where
+  k.slug = 'employment-contract'
+  and s.organization = '고용노동부'
+  and s.title = '개정 「표준 근로계약서」 및 「표준 취업규칙」 게시'
+on conflict (knowledge_id, source_id)
+do update set
+  role = excluded.role,
+  note = excluded.note,
+  display_order = excluded.display_order;
+
+insert into public.knowledge_sources (
+  knowledge_id,
+  source_id,
+  role,
+  note,
+  display_order
+)
+select
+  k.id,
+  s.id,
+  'additional_reference',
+  null,
+  5
+from
+  public.knowledge k,
+  public.sources s
+where
+  k.slug = 'employment-contract'
+  and s.organization = '고용노동부 고객상담센터 1350'
+  and s.title = '근로계약서 미작성 관련 상담 안내'
+on conflict (knowledge_id, source_id)
+do update set
+  role = excluded.role,
+  note = excluded.note,
+  display_order = excluded.display_order;
+
+insert into public.knowledge_sources (
+  knowledge_id,
+  source_id,
+  role,
+  note,
+  display_order
+)
+select
+  k.id,
+  s.id,
+  'legal_basis',
+  '제3조, 제5조, 제6조, 제7조, 제10조',
+  1
+from
+  public.knowledge k,
+  public.sources s
+where
+  k.slug = 'minimum-wage'
+  and s.organization = '법제처 국가법령정보센터'
+  and s.title = '최저임금법'
+on conflict (knowledge_id, source_id)
+do update set
+  role = excluded.role,
+  note = excluded.note,
+  display_order = excluded.display_order;
+
+insert into public.knowledge_sources (
+  knowledge_id,
+  source_id,
+  role,
+  note,
+  display_order
+)
+select
+  k.id,
+  s.id,
+  'legal_basis',
+  '제3조',
+  2
+from
+  public.knowledge k,
+  public.sources s
+where
+  k.slug = 'minimum-wage'
+  and s.organization = '법제처 국가법령정보센터'
+  and s.title = '최저임금법 시행령'
+on conflict (knowledge_id, source_id)
+do update set
+  role = excluded.role,
+  note = excluded.note,
+  display_order = excluded.display_order;
+
+insert into public.knowledge_sources (
+  knowledge_id,
+  source_id,
+  role,
+  note,
+  display_order
+)
+select
+  k.id,
+  s.id,
+  'main_reference',
+  '2026년 적용 시간급 10,320원',
+  3
+from
+  public.knowledge k,
+  public.sources s
+where
+  k.slug = 'minimum-wage'
+  and s.organization = '고용노동부'
+  and s.title = '2026년 적용 최저임금 고시'
+on conflict (knowledge_id, source_id)
+do update set
+  role = excluded.role,
+  note = excluded.note,
+  display_order = excluded.display_order;
+
+insert into public.knowledge_sources (
+  knowledge_id,
+  source_id,
+  role,
+  note,
+  display_order
+)
+select
+  k.id,
+  s.id,
+  'main_reference',
+  '시간급·일급·월 환산액 확인',
+  4
+from
+  public.knowledge k,
+  public.sources s
+where
+  k.slug = 'minimum-wage'
+  and s.organization = '최저임금위원회'
+  and s.title = '2026년 적용 최저임금'
+on conflict (knowledge_id, source_id)
+do update set
+  role = excluded.role,
+  note = excluded.note,
+  display_order = excluded.display_order;
+
+insert into public.knowledge_sources (
+  knowledge_id,
+  source_id,
+  role,
+  note,
+  display_order
+)
+select
+  k.id,
+  s.id,
+  'main_reference',
+  '2026년 최저임금 확정·고시 안내',
+  5
+from
+  public.knowledge k,
+  public.sources s
+where
+  k.slug = 'minimum-wage'
+  and s.organization = '고용노동부'
+  and s.title = '2026년 적용 최저임금 시간급 10,320원'
+on conflict (knowledge_id, source_id)
+do update set
+  role = excluded.role,
+  note = excluded.note,
+  display_order = excluded.display_order;
+
+insert into public.knowledge_sources (
+  knowledge_id,
+  source_id,
+  role,
+  note,
+  display_order
+)
+select
+  k.id,
+  s.id,
+  'additional_reference',
+  '수습근로자 등 제도 안내',
+  6
+from
+  public.knowledge k,
+  public.sources s
+where
+  k.slug = 'minimum-wage'
+  and s.organization = '고용노동부 노동포털'
+  and s.title = '최저임금 제도 안내'
+on conflict (knowledge_id, source_id)
+do update set
+  role = excluded.role,
+  note = excluded.note,
+  display_order = excluded.display_order;
+
+insert into public.knowledge_sources (
+  knowledge_id,
+  source_id,
+  role,
+  note,
+  display_order
+)
+select
+  k.id,
+  s.id,
+  'legal_basis',
+  '제2조, 제11조, 제50조, 제53조, 제54조, 제63조, 제69조',
+  1
+from
+  public.knowledge k,
+  public.sources s
+where
+  k.slug = 'statutory-working-hours'
+  and s.organization = '법제처 국가법령정보센터'
+  and s.title = '근로기준법'
+on conflict (knowledge_id, source_id)
+do update set
+  role = excluded.role,
+  note = excluded.note,
+  display_order = excluded.display_order;
+
+insert into public.knowledge_sources (
+  knowledge_id,
+  source_id,
+  role,
+  note,
+  display_order
+)
+select
+  k.id,
+  s.id,
+  'legal_basis',
+  '제7조 및 별표 1',
+  2
+from
+  public.knowledge k,
+  public.sources s
+where
+  k.slug = 'statutory-working-hours'
+  and s.organization = '법제처 국가법령정보센터'
+  and s.title = '근로기준법 시행령'
+on conflict (knowledge_id, source_id)
+do update set
+  role = excluded.role,
+  note = excluded.note,
+  display_order = excluded.display_order;
+
+insert into public.knowledge_sources (
+  knowledge_id,
+  source_id,
+  role,
+  note,
+  display_order
+)
+select
+  k.id,
+  s.id,
+  'main_reference',
+  '소정근로시간 안내',
+  3
+from
+  public.knowledge k,
+  public.sources s
+where
+  k.slug = 'statutory-working-hours'
+  and s.organization = '고용노동부 고객상담센터 1350'
+  and s.title = '소정근로시간 관련 상담 안내'
+on conflict (knowledge_id, source_id)
+do update set
+  role = excluded.role,
+  note = excluded.note,
+  display_order = excluded.display_order;
+
+insert into public.knowledge_sources (
+  knowledge_id,
+  source_id,
+  role,
+  note,
+  display_order
+)
+select
+  k.id,
+  s.id,
+  'additional_reference',
+  '제54조 휴게시간 관련 향후 시행사항',
+  4
+from
+  public.knowledge k,
+  public.sources s
+where
+  k.slug = 'statutory-working-hours'
+  and s.organization = '법제처 국가법령정보센터'
+  and s.title = '근로기준법 일부개정법률'
+on conflict (knowledge_id, source_id)
+do update set
+  role = excluded.role,
+  note = excluded.note,
+  display_order = excluded.display_order;
+
+insert into public.knowledge_sources (
+  knowledge_id,
+  source_id,
+  role,
+  note,
+  display_order
+)
+select
+  k.id,
+  s.id,
+  'legal_basis',
+  '제11조, 제18조, 제60조, 제61조',
+  1
+from
+  public.knowledge k,
+  public.sources s
+where
+  k.slug = 'annual-leave-basics'
+  and s.organization = '법제처 국가법령정보센터'
+  and s.title = '근로기준법'
+on conflict (knowledge_id, source_id)
+do update set
+  role = excluded.role,
+  note = excluded.note,
+  display_order = excluded.display_order;
+
+insert into public.knowledge_sources (
+  knowledge_id,
+  source_id,
+  role,
+  note,
+  display_order
+)
+select
+  k.id,
+  s.id,
+  'main_reference',
+  '연차유급휴가 발생 기준',
+  2
+from
+  public.knowledge k,
+  public.sources s
+where
+  k.slug = 'annual-leave-basics'
+  and s.organization = '고용노동부 고객상담센터 1350'
+  and s.title = '연차유급휴가 발생 기준 안내'
+on conflict (knowledge_id, source_id)
+do update set
+  role = excluded.role,
+  note = excluded.note,
+  display_order = excluded.display_order;
+
+insert into public.knowledge_sources (
+  knowledge_id,
+  source_id,
+  role,
+  note,
+  display_order
+)
+select
+  k.id,
+  s.id,
+  'additional_reference',
+  '5인 미만 사업장 적용 안내',
+  3
+from
+  public.knowledge k,
+  public.sources s
+where
+  k.slug = 'annual-leave-basics'
+  and s.organization = '고용노동부 고객상담센터 1350'
+  and s.title = '5인 미만 사업장의 연차 적용 안내'
+on conflict (knowledge_id, source_id)
+do update set
+  role = excluded.role,
+  note = excluded.note,
+  display_order = excluded.display_order;
+
+insert into public.knowledge_sources (
+  knowledge_id,
+  source_id,
+  role,
+  note,
+  display_order
+)
+select
+  k.id,
+  s.id,
+  'additional_reference',
+  '연차 관련 2027년 시행 예정사항',
+  4
+from
+  public.knowledge k,
+  public.sources s
+where
+  k.slug = 'annual-leave-basics'
+  and s.organization = '법제처 국가법령정보센터'
+  and s.title = '근로기준법 일부개정법률'
+on conflict (knowledge_id, source_id)
+do update set
+  role = excluded.role,
+  note = excluded.note,
+  display_order = excluded.display_order;
+
+insert into public.knowledge_sources (
+  knowledge_id,
+  source_id,
+  role,
+  note,
+  display_order
+)
+select
+  k.id,
+  s.id,
+  'legal_basis',
+  '제4조, 제8조, 제9조',
+  1
+from
+  public.knowledge k,
+  public.sources s
+where
+  k.slug = 'severance-pay'
+  and s.organization = '법제처 국가법령정보센터'
+  and s.title = '근로자퇴직급여 보장법'
+on conflict (knowledge_id, source_id)
+do update set
+  role = excluded.role,
+  note = excluded.note,
+  display_order = excluded.display_order;
+
+insert into public.knowledge_sources (
+  knowledge_id,
+  source_id,
+  role,
+  note,
+  display_order
+)
+select
+  k.id,
+  s.id,
+  'legal_basis',
+  '제2조 평균임금',
+  2
+from
+  public.knowledge k,
+  public.sources s
+where
+  k.slug = 'severance-pay'
+  and s.organization = '법제처 국가법령정보센터'
+  and s.title = '근로기준법'
+on conflict (knowledge_id, source_id)
+do update set
+  role = excluded.role,
+  note = excluded.note,
+  display_order = excluded.display_order;
+
+insert into public.knowledge_sources (
+  knowledge_id,
+  source_id,
+  role,
+  note,
+  display_order
+)
+select
+  k.id,
+  s.id,
+  'legal_basis',
+  '퇴직금 지급 관련 시행령',
+  3
+from
+  public.knowledge k,
+  public.sources s
+where
+  k.slug = 'severance-pay'
+  and s.organization = '법제처 국가법령정보센터'
+  and s.title = '근로자퇴직급여 보장법 시행령'
+on conflict (knowledge_id, source_id)
+do update set
+  role = excluded.role,
+  note = excluded.note,
+  display_order = excluded.display_order;
+
+insert into public.knowledge_sources (
+  knowledge_id,
+  source_id,
+  role,
+  note,
+  display_order
+)
+select
+  k.id,
+  s.id,
+  'main_reference',
+  '퇴직금 및 평균임금 산정 안내',
+  4
+from
+  public.knowledge k,
+  public.sources s
+where
+  k.slug = 'severance-pay'
+  and s.organization = '고용노동부'
+  and s.title = '퇴직금 및 평균임금 산정 공식 FAQ'
+on conflict (knowledge_id, source_id)
+do update set
+  role = excluded.role,
+  note = excluded.note,
+  display_order = excluded.display_order;
+
+insert into public.knowledge_sources (
+  knowledge_id,
+  source_id,
+  role,
+  note,
+  display_order
+)
+select
+  k.id,
+  s.id,
+  'main_reference',
+  '퇴직금 적용요건 및 지급기한 안내',
+  5
+from
+  public.knowledge k,
+  public.sources s
+where
+  k.slug = 'severance-pay'
+  and s.organization = '고용노동부 고객상담센터 1350'
+  and s.title = '퇴직금 지급요건 및 지급기한 안내'
+on conflict (knowledge_id, source_id)
+do update set
+  role = excluded.role,
+  note = excluded.note,
+  display_order = excluded.display_order;
+
+insert into public.knowledge_sources (
+  knowledge_id,
+  source_id,
+  role,
+  note,
+  display_order
+)
+select
+  k.id,
+  s.id,
+  'legal_basis',
+  '제23조, 제26조, 제27조',
+  1
+from
+  public.knowledge k,
+  public.sources s
+where
+  k.slug = 'dismissal-notice'
+  and s.organization = '법제처 국가법령정보센터'
+  and s.title = '근로기준법'
+on conflict (knowledge_id, source_id)
+do update set
+  role = excluded.role,
+  note = excluded.note,
+  display_order = excluded.display_order;
+
+insert into public.knowledge_sources (
+  knowledge_id,
+  source_id,
+  role,
+  note,
+  display_order
+)
+select
+  k.id,
+  s.id,
+  'legal_basis',
+  '제4조 및 별표 1',
+  2
+from
+  public.knowledge k,
+  public.sources s
+where
+  k.slug = 'dismissal-notice'
+  and s.organization = '법제처 국가법령정보센터'
+  and s.title = '근로기준법 시행규칙'
+on conflict (knowledge_id, source_id)
+do update set
+  role = excluded.role,
+  note = excluded.note,
+  display_order = excluded.display_order;
+
+insert into public.knowledge_sources (
+  knowledge_id,
+  source_id,
+  role,
+  note,
+  display_order
+)
+select
+  k.id,
+  s.id,
+  'main_reference',
+  '30일 예고 및 해고예고수당 안내',
+  3
+from
+  public.knowledge k,
+  public.sources s
+where
+  k.slug = 'dismissal-notice'
+  and s.organization = '고용노동부'
+  and s.title = '해고예고수당 적용 여부 FAQ'
+on conflict (knowledge_id, source_id)
+do update set
+  role = excluded.role,
+  note = excluded.note,
+  display_order = excluded.display_order;
+
+insert into public.knowledge_sources (
+  knowledge_id,
+  source_id,
+  role,
+  note,
+  display_order
+)
+select
+  k.id,
+  s.id,
+  'main_reference',
+  '5인 미만 사업장 해고예고 안내',
+  4
+from
+  public.knowledge k,
+  public.sources s
+where
+  k.slug = 'dismissal-notice'
+  and s.organization = '고용노동부 고객상담센터 1350'
+  and s.title = '5인 미만 사업장 해고예고 안내'
+on conflict (knowledge_id, source_id)
+do update set
+  role = excluded.role,
+  note = excluded.note,
+  display_order = excluded.display_order;
+
+insert into public.knowledge_sources (
+  knowledge_id,
+  source_id,
+  role,
+  note,
+  display_order
+)
+select
+  k.id,
+  s.id,
+  'legal_basis',
+  '제36조, 제43조, 제109조',
+  1
+from
+  public.knowledge k,
+  public.sources s
+where
+  k.slug = 'wage-arrears-response'
+  and s.organization = '법제처 국가법령정보센터'
+  and s.title = '근로기준법'
+on conflict (knowledge_id, source_id)
+do update set
+  role = excluded.role,
+  note = excluded.note,
+  display_order = excluded.display_order;
+
+insert into public.knowledge_sources (
+  knowledge_id,
+  source_id,
+  role,
+  note,
+  display_order
+)
+select
+  k.id,
+  s.id,
+  'legal_basis',
+  '제9조',
+  2
+from
+  public.knowledge k,
+  public.sources s
+where
+  k.slug = 'wage-arrears-response'
+  and s.organization = '법제처 국가법령정보센터'
+  and s.title = '근로자퇴직급여 보장법'
+on conflict (knowledge_id, source_id)
+do update set
+  role = excluded.role,
+  note = excluded.note,
+  display_order = excluded.display_order;
+
+insert into public.knowledge_sources (
+  knowledge_id,
+  source_id,
+  role,
+  note,
+  display_order
+)
+select
+  k.id,
+  s.id,
+  'legal_basis',
+  '제6조',
+  3
+from
+  public.knowledge k,
+  public.sources s
+where
+  k.slug = 'wage-arrears-response'
+  and s.organization = '법제처 국가법령정보센터'
+  and s.title = '최저임금법'
+on conflict (knowledge_id, source_id)
+do update set
+  role = excluded.role,
+  note = excluded.note,
+  display_order = excluded.display_order;
+
+insert into public.knowledge_sources (
+  knowledge_id,
+  source_id,
+  role,
+  note,
+  display_order
+)
+select
+  k.id,
+  s.id,
+  'main_reference',
+  '진정 및 체불임금 해결절차',
+  4
+from
+  public.knowledge k,
+  public.sources s
+where
+  k.slug = 'wage-arrears-response'
+  and s.organization = '고용노동부 노동포털'
+  and s.title = '체불임금 해결방법'
+on conflict (knowledge_id, source_id)
+do update set
+  role = excluded.role,
+  note = excluded.note,
+  display_order = excluded.display_order;
+
+insert into public.knowledge_sources (
+  knowledge_id,
+  source_id,
+  role,
+  note,
+  display_order
+)
+select
+  k.id,
+  s.id,
+  'main_reference',
+  '온라인 진정서 접수',
+  5
+from
+  public.knowledge k,
+  public.sources s
+where
+  k.slug = 'wage-arrears-response'
+  and s.organization = '고용노동부 노동포털'
+  and s.title = '진정서(체불, 직장 내 괴롭힘, 기타 노동법 위반)'
+on conflict (knowledge_id, source_id)
+do update set
+  role = excluded.role,
+  note = excluded.note,
+  display_order = excluded.display_order;
+
+insert into public.knowledge_sources (
+  knowledge_id,
+  source_id,
+  role,
+  note,
+  display_order
+)
+select
+  k.id,
+  s.id,
+  'additional_reference',
+  '사실관계 확인 및 증빙자료 안내',
+  6
+from
+  public.knowledge k,
+  public.sources s
+where
+  k.slug = 'wage-arrears-response'
+  and s.organization = '고용노동부 고객상담센터 1350'
+  and s.title = '임금체불 진정 및 증빙자료 안내'
+on conflict (knowledge_id, source_id)
+do update set
+  role = excluded.role,
+  note = excluded.note,
+  display_order = excluded.display_order;
+
+insert into public.knowledge_sources (
+  knowledge_id,
+  source_id,
+  role,
+  note,
+  display_order
+)
+select
+  k.id,
+  s.id,
+  'legal_basis',
+  '제76조의2, 제76조의3, 제109조, 제116조',
+  1
+from
+  public.knowledge k,
+  public.sources s
+where
+  k.slug = 'workplace-harassment'
+  and s.organization = '법제처 국가법령정보센터'
+  and s.title = '근로기준법'
+on conflict (knowledge_id, source_id)
+do update set
+  role = excluded.role,
+  note = excluded.note,
+  display_order = excluded.display_order;
+
+insert into public.knowledge_sources (
+  knowledge_id,
+  source_id,
+  role,
+  note,
+  display_order
+)
+select
+  k.id,
+  s.id,
+  'legal_basis',
+  '상시 4명 이하 사업장 적용 규정',
+  2
+from
+  public.knowledge k,
+  public.sources s
+where
+  k.slug = 'workplace-harassment'
+  and s.organization = '법제처 국가법령정보센터'
+  and s.title = '근로기준법 시행령'
+on conflict (knowledge_id, source_id)
+do update set
+  role = excluded.role,
+  note = excluded.note,
+  display_order = excluded.display_order;
+
+insert into public.knowledge_sources (
+  knowledge_id,
+  source_id,
+  role,
+  note,
+  display_order
+)
+select
+  k.id,
+  s.id,
+  'main_reference',
+  '2026년 7월 예방·대응 매뉴얼',
+  3
+from
+  public.knowledge k,
+  public.sources s
+where
+  k.slug = 'workplace-harassment'
+  and s.organization = '고용노동부'
+  and s.title = '직장 내 괴롭힘 예방·대응 매뉴얼(''26.7월)'
+on conflict (knowledge_id, source_id)
+do update set
+  role = excluded.role,
+  note = excluded.note,
+  display_order = excluded.display_order;
+
+insert into public.knowledge_sources (
+  knowledge_id,
+  source_id,
+  role,
+  note,
+  display_order
+)
+select
+  k.id,
+  s.id,
+  'main_reference',
+  '법적 판단요소 안내',
+  4
+from
+  public.knowledge k,
+  public.sources s
+where
+  k.slug = 'workplace-harassment'
+  and s.organization = '고용노동부 고객상담센터 1350'
+  and s.title = '직장 내 괴롭힘 판단요소 안내'
+on conflict (knowledge_id, source_id)
+do update set
+  role = excluded.role,
+  note = excluded.note,
+  display_order = excluded.display_order;
+
+insert into public.knowledge_sources (
+  knowledge_id,
+  source_id,
+  role,
+  note,
+  display_order
+)
+select
+  k.id,
+  s.id,
+  'additional_reference',
+  '증빙자료 안내',
+  5
+from
+  public.knowledge k,
+  public.sources s
+where
+  k.slug = 'workplace-harassment'
+  and s.organization = '고용노동부 고객상담센터 1350'
+  and s.title = '직장 내 괴롭힘 관련 증빙자료 안내'
+on conflict (knowledge_id, source_id)
+do update set
+  role = excluded.role,
+  note = excluded.note,
+  display_order = excluded.display_order;
+
+insert into public.knowledge_sources (
+  knowledge_id,
+  source_id,
+  role,
+  note,
+  display_order
+)
+select
+  k.id,
+  s.id,
+  'additional_reference',
+  '직장 내 괴롭힘 관련 진정 접수',
+  6
+from
+  public.knowledge k,
+  public.sources s
+where
+  k.slug = 'workplace-harassment'
+  and s.organization = '고용노동부 노동포털'
+  and s.title = '진정서(체불, 직장 내 괴롭힘, 기타 노동법 위반)'
+on conflict (knowledge_id, source_id)
+do update set
+  role = excluded.role,
+  note = excluded.note,
+  display_order = excluded.display_order;
+
+-- =========================================================
+-- Knowledge Relations
+-- =========================================================
+
+insert into public.knowledge_relations (
+  knowledge_id,
+  related_knowledge_id,
+  display_order
+)
+select
+  source_knowledge.id,
+  related_knowledge.id,
+  1
+from
+  public.knowledge source_knowledge,
+  public.knowledge related_knowledge
+where
+  source_knowledge.slug =
+    'employment-contract'
+  and related_knowledge.slug =
+    'minimum-wage'
+on conflict (
+  knowledge_id,
+  related_knowledge_id
+)
+do update set
+  display_order = excluded.display_order;
+
+insert into public.knowledge_relations (
+  knowledge_id,
+  related_knowledge_id,
+  display_order
+)
+select
+  source_knowledge.id,
+  related_knowledge.id,
+  2
+from
+  public.knowledge source_knowledge,
+  public.knowledge related_knowledge
+where
+  source_knowledge.slug =
+    'employment-contract'
+  and related_knowledge.slug =
+    'statutory-working-hours'
+on conflict (
+  knowledge_id,
+  related_knowledge_id
+)
+do update set
+  display_order = excluded.display_order;
+
+insert into public.knowledge_relations (
+  knowledge_id,
+  related_knowledge_id,
+  display_order
+)
+select
+  source_knowledge.id,
+  related_knowledge.id,
+  1
+from
+  public.knowledge source_knowledge,
+  public.knowledge related_knowledge
+where
+  source_knowledge.slug =
+    'minimum-wage'
+  and related_knowledge.slug =
+    'employment-contract'
+on conflict (
+  knowledge_id,
+  related_knowledge_id
+)
+do update set
+  display_order = excluded.display_order;
+
+insert into public.knowledge_relations (
+  knowledge_id,
+  related_knowledge_id,
+  display_order
+)
+select
+  source_knowledge.id,
+  related_knowledge.id,
+  2
+from
+  public.knowledge source_knowledge,
+  public.knowledge related_knowledge
+where
+  source_knowledge.slug =
+    'minimum-wage'
+  and related_knowledge.slug =
+    'wage-arrears-response'
+on conflict (
+  knowledge_id,
+  related_knowledge_id
+)
+do update set
+  display_order = excluded.display_order;
+
+insert into public.knowledge_relations (
+  knowledge_id,
+  related_knowledge_id,
+  display_order
+)
+select
+  source_knowledge.id,
+  related_knowledge.id,
+  1
+from
+  public.knowledge source_knowledge,
+  public.knowledge related_knowledge
+where
+  source_knowledge.slug =
+    'statutory-working-hours'
+  and related_knowledge.slug =
+    'employment-contract'
+on conflict (
+  knowledge_id,
+  related_knowledge_id
+)
+do update set
+  display_order = excluded.display_order;
+
+insert into public.knowledge_relations (
+  knowledge_id,
+  related_knowledge_id,
+  display_order
+)
+select
+  source_knowledge.id,
+  related_knowledge.id,
+  1
+from
+  public.knowledge source_knowledge,
+  public.knowledge related_knowledge
+where
+  source_knowledge.slug =
+    'annual-leave-basics'
+  and related_knowledge.slug =
+    'employment-contract'
+on conflict (
+  knowledge_id,
+  related_knowledge_id
+)
+do update set
+  display_order = excluded.display_order;
+
+insert into public.knowledge_relations (
+  knowledge_id,
+  related_knowledge_id,
+  display_order
+)
+select
+  source_knowledge.id,
+  related_knowledge.id,
+  2
+from
+  public.knowledge source_knowledge,
+  public.knowledge related_knowledge
+where
+  source_knowledge.slug =
+    'annual-leave-basics'
+  and related_knowledge.slug =
+    'statutory-working-hours'
+on conflict (
+  knowledge_id,
+  related_knowledge_id
+)
+do update set
+  display_order = excluded.display_order;
+
+insert into public.knowledge_relations (
+  knowledge_id,
+  related_knowledge_id,
+  display_order
+)
+select
+  source_knowledge.id,
+  related_knowledge.id,
+  1
+from
+  public.knowledge source_knowledge,
+  public.knowledge related_knowledge
+where
+  source_knowledge.slug =
+    'severance-pay'
+  and related_knowledge.slug =
+    'wage-arrears-response'
+on conflict (
+  knowledge_id,
+  related_knowledge_id
+)
+do update set
+  display_order = excluded.display_order;
+
+insert into public.knowledge_relations (
+  knowledge_id,
+  related_knowledge_id,
+  display_order
+)
+select
+  source_knowledge.id,
+  related_knowledge.id,
+  1
+from
+  public.knowledge source_knowledge,
+  public.knowledge related_knowledge
+where
+  source_knowledge.slug =
+    'dismissal-notice'
+  and related_knowledge.slug =
+    'wage-arrears-response'
+on conflict (
+  knowledge_id,
+  related_knowledge_id
+)
+do update set
+  display_order = excluded.display_order;
+
+insert into public.knowledge_relations (
+  knowledge_id,
+  related_knowledge_id,
+  display_order
+)
+select
+  source_knowledge.id,
+  related_knowledge.id,
+  1
+from
+  public.knowledge source_knowledge,
+  public.knowledge related_knowledge
+where
+  source_knowledge.slug =
+    'wage-arrears-response'
+  and related_knowledge.slug =
+    'severance-pay'
+on conflict (
+  knowledge_id,
+  related_knowledge_id
+)
+do update set
+  display_order = excluded.display_order;
+
+insert into public.knowledge_relations (
+  knowledge_id,
+  related_knowledge_id,
+  display_order
+)
+select
+  source_knowledge.id,
+  related_knowledge.id,
+  2
+from
+  public.knowledge source_knowledge,
+  public.knowledge related_knowledge
+where
+  source_knowledge.slug =
+    'wage-arrears-response'
+  and related_knowledge.slug =
+    'minimum-wage'
+on conflict (
+  knowledge_id,
+  related_knowledge_id
+)
+do update set
+  display_order = excluded.display_order;
+
+commit;
+
