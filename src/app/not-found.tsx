@@ -22,15 +22,22 @@ export default function NotFound() {
 
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <Link
-              href="/knowledge"
+              href="/guide"
               className="inline-flex min-h-11 items-center rounded-control bg-primary px-5 type-label text-white transition-colors hover:bg-primary-hover"
             >
-              인사노무 정보 보기
+              상황별 찾기
+            </Link>
+
+            <Link
+              href="/knowledge"
+              className="inline-flex min-h-11 items-center rounded-control border border-border bg-surface px-5 type-label text-text transition-colors hover:bg-bg"
+            >
+              인사노무 정보
             </Link>
 
             <Link
               href="/"
-              className="inline-flex min-h-11 items-center rounded-control border border-border bg-surface px-5 type-label text-text transition-colors hover:bg-bg"
+              className="inline-flex min-h-11 items-center type-label text-text-secondary transition-colors hover:text-primary"
             >
               홈으로
             </Link>

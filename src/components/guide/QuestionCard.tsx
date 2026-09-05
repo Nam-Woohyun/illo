@@ -42,24 +42,22 @@ export function QuestionCard({
           “{question}”
         </h3>
 
-        <div className="mt-5 border-t border-border pt-4">
-          <p className="type-label text-primary">
-            확인할 정보
-          </p>
+        <div className="mt-5 flex flex-col gap-3 border-t border-border pt-4 tablet:flex-row tablet:items-end tablet:justify-between">
+          <div>
+            <p className="type-caption text-muted">
+              연결된 정보
+            </p>
 
-          <p className="mt-1 font-semibold text-text">
-            {knowledge.title}
-          </p>
+            <p className="mt-1 font-semibold text-text">
+              {knowledge.title}
+            </p>
+          </div>
 
-          <p className="type-body-sm mt-2 text-text-secondary">
-            {knowledge.summary}
-          </p>
-        </div>
-
-        <div className="mt-5 type-label text-primary">
-          정보 보기{" "}
-          <span aria-hidden="true">
-            →
+          <span className="type-label shrink-0 text-primary">
+            정보 보기{" "}
+            <span aria-hidden="true">
+              →
+            </span>
           </span>
         </div>
       </Link>

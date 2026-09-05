@@ -17,10 +17,14 @@ const mobileItems = navigationItems.filter(
 export function MobileMenu() {
   const [open, setOpen] = useState(false);
 
-  const rootRef = useRef<HTMLDivElement>(null);
+  const rootRef =
+    useRef<HTMLDivElement>(null);
+
   const triggerRef =
     useRef<HTMLButtonElement>(null);
-  const menuRef = useRef<HTMLDivElement>(null);
+
+  const menuRef =
+    useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!open) {
@@ -102,11 +106,17 @@ export function MobileMenu() {
         ref={triggerRef}
         type="button"
         aria-label={
-          open ? "메뉴 닫기" : "메뉴 열기"
+          open
+            ? "메뉴 닫기"
+            : "메뉴 열기"
         }
         aria-expanded={open}
         aria-controls="mobile-site-menu"
-        onClick={() => setOpen((current) => !current)}
+        onClick={() =>
+          setOpen(
+            (current) => !current,
+          )
+        }
         className="inline-flex size-11 items-center justify-center rounded-control text-text-secondary transition-colors hover:bg-bg hover:text-primary"
       >
         {open ? (
@@ -120,14 +130,28 @@ export function MobileMenu() {
         <div
           id="mobile-site-menu"
           ref={menuRef}
-          className="fixed inset-x-0 top-[60px] z-40 border-y border-border bg-surface shadow-overlay desktop:hidden"
+          className={[
+            "absolute",
+            "inset-x-0",
+            "top-full",
+            "z-40",
+            "max-h-[calc(100vh-60px)]",
+            "overflow-y-auto",
+            "border-y",
+            "border-border",
+            "bg-surface",
+            "shadow-overlay",
+            "desktop:hidden",
+          ].join(" ")}
         >
           <PageContainer className="py-3">
             <nav aria-label="모바일 메뉴">
               <NavLinks
                 items={mobileItems}
                 variant="mobile"
-                onNavigate={closeMenu}
+                onNavigate={
+                  closeMenu
+                }
               />
             </nav>
           </PageContainer>
