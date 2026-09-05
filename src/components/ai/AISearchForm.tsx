@@ -187,7 +187,7 @@ function getServerErrorMessage(
 
   if (
     typeof value.error !==
-      "string"
+    "string"
   ) {
     return null;
   }
@@ -317,6 +317,14 @@ export function AISearchForm() {
             cache: "no-store",
           },
         );
+
+      if (response.status === 429) {
+        setError(
+          "짧은 시간에 요청이 많았습니다. 잠시 후 다시 시도해주세요.",
+        );
+
+        return;
+      }
 
       const payload:
         unknown =
@@ -586,7 +594,9 @@ function AISearchOutput({
                 {data.analysis.keywords.map(
                   (keyword) => (
                     <Chip
-                      key={keyword}
+                      key={
+                        keyword
+                      }
                       variant="primary"
                       className="max-w-full"
                     >
@@ -612,7 +622,9 @@ function AISearchOutput({
                 {data.analysis.guideSituations.map(
                   (guide) => (
                     <Chip
-                      key={guide.slug}
+                      key={
+                        guide.slug
+                      }
                       variant="situation"
                       className="max-w-full"
                     >
@@ -790,8 +802,8 @@ function NoSignalState() {
         id="ai-no-signal-title"
         className="type-h2 mt-3 text-text"
       >
-        인사노무와 관련된
-        상황을 조금 더
+        일하면서 겪은 상황이나
+        궁금한 점을 조금 더
         구체적으로 설명해주세요
       </h2>
 
@@ -819,16 +831,16 @@ function NoMatchState() {
         id="ai-no-match-title"
         className="type-h2 mt-3 text-text"
       >
-        현재 제공 중인
-        정보에서 충분히 가까운
-        내용을 찾지 못했습니다
+        현재 일로에서 제공하는
+        정보 중 이 상황과 충분히
+        가까운 내용을 찾지 못했습니다
       </h2>
 
       <p className="type-body mt-4 text-text-secondary">
-        없는 정보를 AI가 새로
-        만들지 않고, 현재 일로에
-        등록된 인사노무 정보
-        안에서만 결과를 찾습니다.
+        AI가 새로운 답을
+        만들어내기보다, 일로에
+        등록된 정보 안에서
+        관련된 내용을 찾습니다.
       </p>
 
       <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2">
