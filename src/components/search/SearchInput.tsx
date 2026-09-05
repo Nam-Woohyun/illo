@@ -8,6 +8,7 @@ interface SearchInputProps {
   defaultValue?: string;
   buttonLabel?: string;
   required?: boolean;
+  maxLength?: number;
 }
 
 export function SearchInput({
@@ -18,6 +19,7 @@ export function SearchInput({
   defaultValue = "",
   buttonLabel = "검색",
   required = false,
+  maxLength = 100,
 }: SearchInputProps) {
   return (
     <form
@@ -40,6 +42,7 @@ export function SearchInput({
         defaultValue={defaultValue}
         placeholder={placeholder}
         required={required}
+        maxLength={maxLength}
         autoComplete="off"
         className={[
           "h-12",
