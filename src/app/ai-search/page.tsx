@@ -1,13 +1,16 @@
-import type { Metadata } from "next";
-import Link from "next/link";
+import type {
+  Metadata,
+} from "next";
 
+import { AISearchForm } from "@/components/ai/AISearchForm";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { PageHeader } from "@/components/layout/PageHeader";
+import { Callout } from "@/components/ui/Callout";
 
 export const metadata: Metadata = {
   title: "AI로 찾기 | 일로",
   description:
-    "자연어 상황을 분석해 관련 인사노무 정보를 찾는 기능을 준비하고 있습니다.",
+    "법률 용어를 몰라도 현재 상황을 문장으로 설명해 관련 인사노무 정보를 찾아보세요.",
 };
 
 export default function AISearchPage() {
@@ -18,56 +21,41 @@ export default function AISearchPage() {
           <PageHeader
             eyebrow="AI Search"
             title="AI로 찾기"
-            description="상황을 자연어로 설명하면 관련 Knowledge를 찾아주는 탐색 기능입니다."
+            description="법률 용어를 몰라도 현재 상황을 문장으로 설명해보세요. 관련된 인사노무 정보를 찾아드립니다."
           />
 
-          <section className="mt-10 border-t border-border pt-8">
-            <h2 className="type-h2 text-text">
-              현재 준비 중입니다
-            </h2>
-
-            <p className="type-body mt-4 text-text-secondary">
-              질문의 핵심과 관련 키워드를
-              분석해 일로 내부의 관련
-              정보를 추천하는 기능을
-              구현할 예정입니다.
+          <section
+            aria-label="AI 인사노무 정보 찾기"
+            className="mt-10"
+          >
+            <p className="type-body text-text-secondary">
+              AI는 입력한 문장에서
+              검색에 필요한 핵심
+              표현과 상황을 정리하고,
+              일로에 등록된 정보를
+              찾는 데 사용됩니다.
             </p>
 
-            <p className="type-body-sm mt-3 text-muted">
-              법률적 결론을 생성하는
-              상담 기능이 아니라,
-              신뢰할 수 있는 내부 정보를
-              찾기 위한 탐색 기능입니다.
-            </p>
-
-            <div className="mt-7 flex flex-wrap gap-x-6 gap-y-2">
-              <Link
-                href="/guide"
-                className="inline-flex min-h-11 items-center type-label text-primary transition-colors hover:text-primary-hover"
-              >
-                상황별로 찾기
-                <span
-                  aria-hidden="true"
-                  className="ml-2"
-                >
-                  →
-                </span>
-              </Link>
-
-              <Link
-                href="/search"
-                className="inline-flex min-h-11 items-center type-label text-text-secondary transition-colors hover:text-primary"
-              >
-                일반 검색 이용하기
-                <span
-                  aria-hidden="true"
-                  className="ml-2"
-                >
-                  →
-                </span>
-              </Link>
+            <div className="mt-7">
+              <AISearchForm />
             </div>
           </section>
+
+          <div className="mt-10">
+            <Callout
+              variant="info"
+              title="AI 기능 안내"
+            >
+              AI는 관련 정보를
+              찾기 위한 보조 기능이며,
+              개별 사건의 적법·위법
+              여부나 권리 유무를
+              판단하지 않습니다.
+              필요한 내용은 연결된
+              인사노무 정보와 공식
+              출처에서 확인해주세요.
+            </Callout>
+          </div>
         </div>
       </PageContainer>
     </main>
