@@ -21,18 +21,18 @@ export default function AISearchPage() {
           <PageHeader
             eyebrow="AI Search"
             title="AI로 찾기"
-            description="법률 용어를 몰라도 현재 상황을 문장으로 설명해보세요. 관련된 인사노무 정보를 찾아드립니다."
+            description="법률 용어를 몰라도 일하면서 겪은 상황을 문장으로 설명해보세요. 필요한 정보를 찾아드립니다."
           />
 
           <section
-            aria-label="AI 인사노무 정보 찾기"
+            aria-label="AI 정보 찾기"
             className="mt-10"
           >
             <p className="type-body text-text-secondary">
               AI는 입력한 문장에서
-              검색에 필요한 핵심
-              표현과 상황을 정리하고,
-              일로에 등록된 정보를
+              핵심 표현과 상황을
+              정리하고, 일로에 등록된
+              정보 중 관련된 내용을
               찾는 데 사용됩니다.
             </p>
 
@@ -46,14 +46,14 @@ export default function AISearchPage() {
               variant="info"
               title="AI 기능 안내"
             >
-              AI는 관련 정보를
-              찾기 위한 보조 기능이며,
-              개별 사건의 적법·위법
-              여부나 권리 유무를
-              판단하지 않습니다.
+              AI는 관련 정보를 찾기
+              위한 보조 기능이며,
+              개별 상황에 대한 법률
+              판단이나 전문 상담을
+              대신하지 않습니다.
               필요한 내용은 연결된
-              인사노무 정보와 공식
-              출처에서 확인해주세요.
+              정보와 공식 출처에서
+              확인해주세요.
             </Callout>
           </div>
         </div>

@@ -187,7 +187,7 @@ function getServerErrorMessage(
 
   if (
     typeof value.error !==
-    "string"
+      "string"
   ) {
     return null;
   }
@@ -418,7 +418,7 @@ export function AISearchForm() {
           <div className="mt-2 flex items-start justify-between gap-4">
             <p
               id="ai-search-help"
-              className="type-caption text-muted"
+              className="type-caption text-text-secondary"
             >
               주민등록번호,
               전화번호 등 개인
@@ -428,7 +428,7 @@ export function AISearchForm() {
 
             <p
               id="ai-search-count"
-              className="type-caption shrink-0 text-muted"
+              className="type-caption shrink-0 text-text-secondary"
             >
               {queryLength} /{" "}
               {
@@ -586,12 +586,13 @@ function AISearchOutput({
                 {data.analysis.keywords.map(
                   (keyword) => (
                     <Chip
-                      key={
-                        keyword
-                      }
+                      key={keyword}
                       variant="primary"
+                      className="max-w-full"
                     >
-                      {keyword}
+                      <span className="min-w-0 break-words text-primary-hover">
+                        {keyword}
+                      </span>
                     </Chip>
                   ),
                 )}
@@ -611,12 +612,13 @@ function AISearchOutput({
                 {data.analysis.guideSituations.map(
                   (guide) => (
                     <Chip
-                      key={
-                        guide.slug
-                      }
+                      key={guide.slug}
                       variant="situation"
+                      className="max-w-full"
                     >
-                      {guide.name}
+                      <span className="min-w-0 break-words text-primary-hover">
+                        {guide.name}
+                      </span>
                     </Chip>
                   ),
                 )}
@@ -721,7 +723,9 @@ function AIResultItem({
         ].join(" ")}
       >
         <Badge>
-          {result.categoryName}
+          <span className="text-primary-hover">
+            {result.categoryName}
+          </span>
         </Badge>
 
         <h3 className="type-h3 mt-4 text-text transition-colors group-hover:text-primary">
@@ -735,7 +739,7 @@ function AIResultItem({
         {result.matchedTerms
           .length > 0 && (
           <div className="mt-5">
-            <p className="type-caption font-semibold text-muted">
+            <p className="type-caption font-semibold text-text-secondary">
               연결된 핵심
             </p>
 
@@ -745,8 +749,11 @@ function AIResultItem({
                   <Chip
                     key={term}
                     variant="primary"
+                    className="max-w-full"
                   >
-                    {term}
+                    <span className="min-w-0 break-words text-primary-hover">
+                      {term}
+                    </span>
                   </Chip>
                 ),
               )}
@@ -775,7 +782,7 @@ function NoSignalState() {
       aria-labelledby="ai-no-signal-title"
       className="mt-8 rounded-card border border-border bg-surface p-6 tablet:p-8"
     >
-      <p className="type-label text-muted">
+      <p className="type-label text-text-secondary">
         분석할 정보가 부족합니다
       </p>
 
@@ -804,7 +811,7 @@ function NoMatchState() {
       aria-labelledby="ai-no-match-title"
       className="mt-8 rounded-card border border-border bg-surface p-6 tablet:p-8"
     >
-      <p className="type-label text-muted">
+      <p className="type-label text-text-secondary">
         관련 정보 없음
       </p>
 
