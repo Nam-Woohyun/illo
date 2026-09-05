@@ -10,6 +10,7 @@ import { sources } from "@/data/sources";
 
 import type {
   Category,
+  GuideSituation,
   Knowledge,
   KnowledgeSourceRole,
   Source,
@@ -52,6 +53,22 @@ export async function getCategoryBySlug(
   );
 
   return category ?? null;
+}
+
+export async function getAllGuideSituations(): Promise<
+  GuideSituation[]
+> {
+  return [...guideSituations];
+}
+
+export async function getGuideSituationBySlug(
+  slug: string,
+): Promise<GuideSituation | null> {
+  const guide = guideSituations.find(
+    (item) => item.slug === slug,
+  );
+
+  return guide ?? null;
 }
 
 export async function getAllKnowledge(): Promise<
