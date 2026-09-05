@@ -9,6 +9,7 @@ import {
 import { sources } from "@/data/sources";
 
 import type {
+  Category,
   Knowledge,
   KnowledgeSourceRole,
   Source,
@@ -25,6 +26,32 @@ export interface SourceForKnowledge {
   role: KnowledgeSourceRole;
   note: string | null;
   displayOrder: number;
+}
+
+export async function getAllCategories(): Promise<
+  Category[]
+> {
+  return [...categories];
+}
+
+export async function getCategoryById(
+  id: string,
+): Promise<Category | null> {
+  const category = categories.find(
+    (item) => item.id === id,
+  );
+
+  return category ?? null;
+}
+
+export async function getCategoryBySlug(
+  slug: string,
+): Promise<Category | null> {
+  const category = categories.find(
+    (item) => item.slug === slug,
+  );
+
+  return category ?? null;
 }
 
 export async function getAllKnowledge(): Promise<
